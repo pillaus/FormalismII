@@ -59,5 +59,5 @@ LDFLAGS := -Xlinker -rpath . $(shell root-config --glibs) $(STDLIBDIR)
 #	rm -f *.o $(TARGET) *~
 #pentaquarkMatrix.cpp Isobar.cpp main.cpp pentaquarkMatrix.h Isobar.h
 
-main : Isobar.cpp Isobar.h main.cpp PentaquarkMatrix.cpp PentaquarkMatrix.h
-	g++ -o main PentaquarkMatrix.cpp Isobar.cpp main.cpp -lm
+main : Isobar.cpp Isobar.h main.cpp PentaquarkMatrix.cpp PentaquarkMatrix.h SpecialFunctions.h
+	g++ -o main PentaquarkMatrix.cpp Isobar.cpp main.cpp   -I/usr/include/gsl/  -lgsl -lgslcblas -lm

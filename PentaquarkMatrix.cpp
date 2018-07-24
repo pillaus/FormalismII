@@ -118,8 +118,8 @@ double PentaquarkMatrix::Evaluate()
         valP = valM = over4PI * ((double) + 1.) * pow(ps*qs, (lambda == -1) ? (j - 3)/2 : (j - 1)/2 );
 
 
-        FF[0][kl] += valPC;
-        FF[0][kl] += valPV;
+        FF[0][kl] += valP;
+        FF[1][kl] += valM;
 
       }
 
