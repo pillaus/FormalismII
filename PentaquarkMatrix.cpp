@@ -48,7 +48,7 @@ void PentaquarkMatrix::slash(double p[4], cd ret[4][4])
     for (int mu = 0; mu < 4; mu++) ret[i][j]  += metric[mu]*p[mu]*gamma[mu][i][j];
    }
  }
-void PentaquarkMatrix::slashm(double p[4], double m, cd ret[4][4])
+void PentaquarkMatrix::slash(double p[4], double m, cd ret[4][4])
 {
   for (int i = 0; i < 4; i++) for (int j = 0; j < 4; j++)
   {
@@ -69,18 +69,26 @@ void PentaquarkMatrix::slashm(double p[4], double m, cd ret[4][4])
 {
   double ppsi[4], pb[4];
   for (int mu =0; mu < 4; mu++) { ppsi[mu] = pmu_p[mu] + pmu_m[mu]; pb[mu] = ppsi[mu] + pp[mu] + pK[mu]; }
+  // for (int mu =0; mu < 4; mu++) for (int nu =0; nu < 4; nu++)
+  // {
+  //   lepton[mu][nu] = pmu_p[mu]*pmu_m[nu] + pmu_p[nu]*pmu_m[mu];
+  //   lepton[mu][nu] -= (mu == nu) ? metric[mu]*mpsi2/2. : 0.;
+  // }
   for (int mu =0; mu < 4; mu++) for (int nu =0; nu < 4; nu++)
   {
-    lepton[mu][nu] = pmu_p[mu]*pmu_m[nu] + pmu_p[nu]*pmu_m[mu];
-    lepton[mu][nu] -= (mu == nu) ? metric[mu]*mpsi2/2. : 0.;
+    lepton[mu][nu]  = ppsi[mu]*ppsi[nu]/mpsi2;
+    lepton[mu][nu] -= (mu == nu) ? metric[mu] : 0.;
   }
+          // To add muons
 
   cd ppsislash[4][4];
   slash(ppsi, ppsislash);
+  slash(pb, mb, pbm);
+  slash(pp, mp, ppm);
 
   double _s = 0., _u = 0.;
   for (int mu = 0; mu < 4; mu++) { _s += metric[mu]*pow(pp[mu] + pK[mu], 2); _u += metric[mu]*pow(pp[mu] + ppsi[mu], 2);  }
-  this->SetKinematics(_s, _u);
+  PentaquarkMatrix::SetKinematics(_s, _u);
 
   // Lorentz-Dirac structures. PC
   for (int i =0; i < 4; i++) for (int j =0; j < 4; j++) for (int mu =0; mu < 4; mu++)
@@ -98,9 +106,9 @@ void PentaquarkMatrix::slashm(double p[4], double m, cd ret[4][4])
   return;
 }
 
-double PentaquarkMatrix::Evaluate()
+cd PentaquarkMatrix::Evaluate()
 {
-  cd FF[4][6] = {};
+  cd FF[4][6] = {}; // First index is channel and PC/PV. second index the 6 guys
 
 
 
@@ -108,31 +116,128 @@ double PentaquarkMatrix::Evaluate()
   unsigned int size = Isobars->size();
   for (unsigned int n = 0; n < size; n++)
   {
-    if (Isobars->at(n).Channel() == 's' )
+    int j = Isobars->at(n).J(); // remember j is twice the spin
+    int S = Isobars->at(n).Spin();
+    int L = Isobars->at(n).L();
+    int PC = Isobars->at(n).PC()  ?1:-1;
+    int eta  = Isobars->at(n).Eta() ?1:-1;
+    double valP = 1., valM = 1., fact;
+    // fact are the common values for both etabars. varP is for etabar +, varM for etabar -
+    int lambdamin = (j == 1) ? 0 : -1;
+    for (int lambda = 1; lambda >= lambdamin; lambda--)
     {
-      for (int lambda = 1; lambda >= -1; lambda--)
+      int kl = 1 - lambda;
+      if (Isobars->at(n).Channel() == 's' )
       {
-        int kl = 1 - lambda;
-        int j = Isobars->at(n).J(); // remember j is twice the spin
-        cd valP, valM;
-        valP = valM = over4PI * ((double) + 1.) * pow(ps*qs, (lambda == -1) ? (j - 3)/2 : (j - 1)/2 );
 
+        fact = over4PI * (j + 1) * pow(ps*qs, (lambda == -1) ? (j - 3)/2 : (j - 1)/2 )
+                    * SpecialFunc::ClebschGordan(1,1,2, -2*lambda,S, 1 - 2*lambda) * SpecialFunc::ClebschGordan(S, 1 - 2*lambda, L, 0, j, 1 - 2*lambda);
 
-        FF[0][kl] += valP;
-        FF[1][kl] += valM;
+        if (lambda == -1)
+        {
+          fact *=  mpsi*mp/rs*eta;
+          valM *= -1.;
+        }
+        else if (lambda == 0 && (j != 1 || eta != PC))
+        {
+          fact *= Epsi_s / mpsi;
+        }
+        if (eta > 0)
+        {
+          // eta = +, etabar = +
+          valP *= SpecialFunc::WignerDhat(j, 1, 1 - 2*lambda, true, costheta_s);
+          if (j == 1 && PC > 0) valP *= ps2*s/mpsi2;
+          // eta = +, etabar = -
+          valM *= SpecialFunc::WignerDhat(j, 1, 1 - 2*lambda, false, costheta_s);
+          valM /= (PC > 0) ? ps*mp/qs/mpsi :  mpsi*mp/s/ps/qs;
+        }
+        else
+        {
+          // eta = -, etabar = -
+          valM *= SpecialFunc::WignerDhat(j, 1, 1 - 2*lambda, true, costheta_s);
+          if (j == 1 && PC < 0) valM *= ps2*s/mpsi2;
+          // eta = -, etabar = +
+          valP *= SpecialFunc::WignerDhat(j, 1, 1 - 2*lambda, false, costheta_s);
+          valP *= (PC > 0) ? ps*mp/qs/mpsi :  mpsi*mp/s/ps/qs;
+        }
+        if (2*L - j + 2 + eta*PC > 0) fact *= ps2;
+
+//        fact *= sqrt((Eb_s + mb)/(Ep_s + mp));
+        cd cfact = Isobars->at(n).Evaluate(s) * fact;
+        FF[PC ? 0 : 1][kl  ] += cfact*valP;
+        FF[PC ? 0 : 1][kl+3] += cfact*valM;
 
       }
+      else if (Isobars->at(n).Channel() == 'u' )
+      {
+          fact = over4PI * (j + 1) * pow(pu*qu, (lambda == -1) ? (j - 3)/2 : (j - 1)/2 )
+                      * SpecialFunc::ClebschGordan(1,1,2, -2*lambda,S, 1 - 2*lambda) * SpecialFunc::ClebschGordan(S, 1 - 2*lambda, L, 0, j, 1 - 2*lambda);
 
+          if (lambda == -1)
+          {
+            fact *=  mb*mp/ru*eta;
+            valM *= -1.;
+          }
+          if (eta > 0)
+          {
+            fact *= (Ep_u + mp)/2./mp;
+            // eta = +, etabar = +
+            valP *= SpecialFunc::WignerDhat(j, 1, 1 - 2*lambda, true, costheta_u);
+            if (j == 1) valP *= qu2*u/mp2;
+            // eta = +, etabar = -
+            valM *= SpecialFunc::WignerDhat(j, 1, 1 - 2*lambda, false, costheta_u);
+            valM /= (PC > 0) ? qu*mb/pu/mp/(u - um) :  qu*mb*pu*mp/(u - um);
+          }
+          else
+          {
+            // eta = -, etabar = -
+            valM *= SpecialFunc::WignerDhat(j, 1, 1 - 2*lambda, true, costheta_u);
+            // eta = -, etabar = +
+            valP *= SpecialFunc::WignerDhat(j, 1, 1 - 2*lambda, false, costheta_u);
+            valP *= (PC > 0) ? qu*mb/pu/mp/(u - um) :  qu*mb*pu*mp/(u - um);
+          }
+          if (2*L - j + 2 + eta > 0) fact *= qu2;
 
+//          fact *= sqrt((Eb_s + mb));
+          cd cfact = Isobars->at(n).Evaluate(u) * fact;
+          FF[PC ? 2 : 3][kl  ] += cfact*valP;
+          FF[PC ? 2 : 3][kl+3] += cfact*valM;
+
+        }
+      }
     }
+    cd CC[4][6] = {};
+    for (int i =0; i < 4; i++) for (int j =0; j < 6; j++) for (int k =0; k < 6; k++) CC[i][j] += Matrices[i][j][k]*FF[i][k];
+
+    cd CM[4][4][4] = {};
+    for (int i =0; i < 4; i++) for (int j =0; j < 4; j++) for (int mu =0; mu < 4; mu++) for (int k = 0; k < 6 ; k++)
+    {
+      // s- and u-channel, PC
+      CM[mu][i][j] += Structures[k][mu][i][j] * (CC[0][k] + CC[2][k]);
+      // s- and u-channel, PV
+      CM[mu][i][j] += Structures[k][mu][g5(i)][j] * (CC[1][k] + CC[3][k]);
+    }
+
+    cd ret = 0.;
+
+    for (int i =0; i < 4; i++) for (int j =0; j < 4; j++) for (int k =0; k < 4; k++) for (int l =0; l < 4; l++) for (int mu =0; mu < 4; mu++) for (int nu =0; nu < 4; nu++)
+    {
+      ret += pbm[i][j] * CM[mu][j][k] * pbm[k][l] * std::conj(CM[nu][i][l]) * g0fy(l,i) *lepton[mu][nu];
+    }
+
+
+
+
+
+
     // else if (!Isobars[n].PC() && Isobars[n].Channel() == 's' ) sel = 1;
     // else if (Isobars[n].PC() && Isobars[n].Channel() == 'u' ) sel = 2;
     // else if (!Isobars[n].PC() && Isobars[n].Channel() == 'u' ) sel = 3;
 
 
-  }
 
-  return 0.;
+
+  return ret;
 }
 /**
     Sets the kinematics and check whether it falls in the Dalitz (optional)
@@ -167,6 +272,9 @@ double PentaquarkMatrix::Evaluate()
     Epsi_u= (u + mpsi2 - mp2)/2./ru;
     Eb_u = (u - mK2 + mb2)/2./ru;
     Ep_u = (u + mp2 - mpsi2)/2./ru;
+
+    costheta_s = (s*(t - u) + (mb2 - mpsi2)*(mp2 - mK2))/(4.*s*ps*qs);
+    costheta_u = (u*(t - s) + (mb2 - mK2)*(mp2 - mpsi2))/(4.*u*pu*qu);
 
     if (check && !(s <= sm && s >= pow(mp + mK, 2) && u >= up && u <= pow(mb - mK, 2) && num_s <= ps*qs && num_s >= -ps*qs && num_u <= pu*qu && num_u >= -pu*qu ))
     {

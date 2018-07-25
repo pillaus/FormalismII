@@ -19,7 +19,7 @@ typedef std::complex<double> cd;
 class Isobar
 {
 public:
-  Isobar(double mass, double width, cd coupling, unsigned int j, unsigned int spin, unsigned int L, bool eta, bool PC, char channel);
+  Isobar(double mass, double width, cd coupling, unsigned int j, unsigned int spin, unsigned int L, bool eta, bool PC, char channel, int amp);
   ~Isobar () {};
   double Mass (double x);
   double Width (double x);
@@ -34,6 +34,9 @@ public:
   bool Eta() { return _eta; };
   bool PC() { return _PC; };
   char Channel () { return _channel; };
+  cd Evaluate(double x);
+
+  static const int BreitWigner;
 
 private:
   double _mass, _width;
@@ -41,10 +44,12 @@ private:
   unsigned int _spin, _j, _L;
   bool _eta, _PC;
   char _channel;
+  int _amplitude;
   void CheckConsistency();
   unsigned int Spin(unsigned int x);
   unsigned int L(unsigned int x);
   unsigned int J(unsigned int x);
+  int Amplitude(int x);
   bool Eta(bool x);
   bool PC(bool x);
   char Channel (char x);

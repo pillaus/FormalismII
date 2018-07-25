@@ -8,6 +8,7 @@
 #define DEBUG_H
 #include "Isobar.h"
 
+const int Isobar::BreitWigner = 0;
 
   /**
       Constructor. It gets the masses as optional input. Default from LivePDG, 2018-05-13
@@ -18,7 +19,7 @@
       @param _mK Kaon mass
 
   */
-Isobar::Isobar(double mass, double width, cd coupling, unsigned int j, unsigned int spin, unsigned int L, bool eta, bool PC, char channel)
+Isobar::Isobar(double mass, double width, cd coupling, unsigned int j, unsigned int spin, unsigned int L, bool eta, bool PC, char channel, int amp)
 {
   this->Mass(mass);
   this->Width(width);
@@ -29,6 +30,7 @@ Isobar::Isobar(double mass, double width, cd coupling, unsigned int j, unsigned 
   this->Eta(eta);
   this->PC(PC);
   this->Channel(channel);
+  this->Amplitude(amp);
 
   CheckConsistency();
 
@@ -77,6 +79,23 @@ char Isobar::Channel(char x)
 {
   if (x != 's' && x != 'u') { DEBUG("Nonvalid channel, set default s"); x = 's'; }
   return _channel = x;
+}
+int Isobar::Amplitude(int x)
+{
+  if (x!= 0) { DEBUG("Unknown amplitude, setting BreitWigner"); x = 0; }
+  return _amplitude = x;
+}
+
+cd Isobar::Evaluate(double x)
+{
+  switch (_amplitude)
+  {
+    case 0:
+    cd den = _mass * _mass - x - 1.i * _mass * _width;
+    return _coupling / den;
+    return 1.i ; //_coupling/(_mass * _mass - x - 1.i * _mass * _width);
+  }
+
 }
 void Isobar::CheckConsistency()
 {

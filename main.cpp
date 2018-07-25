@@ -2,6 +2,7 @@
 #include "Isobar.h"
 
 
+
 void shuffle(double p[4])
 {
   double x = p[3] * .001;
@@ -27,9 +28,10 @@ int main ()
 
 //   Isobar(double mass, double width, cd coupling unsigned int j, unsigned int spin, unsigned int L, bool eta, char channel)
   std::vector<Isobar> *Isobars = new std::vector<Isobar>();
-  Isobar iso(1.519, 0.156, 1., 3, 3, 2, true, true, 's');
+
   //Isobar iso;
-  Isobars->push_back(Isobar(1.519, 0.156, 1., 3, 3, 2, true, true, 's'));
+  Isobars->push_back(Isobar(1.519, 0.156, 1., 3, 3, 2, true, true, 's', Isobar::BreitWigner));
+  Isobars->push_back(Isobar(1.,1., 1., 3, 3, 2, true, true, 's', Isobar::BreitWigner));
   std::cout << Isobars->at(0).J() << std::endl;
 
   p->SetIsobars(Isobars);
@@ -38,7 +40,17 @@ int main ()
 
   std::cout << p->Evaluate() << std::endl;
 
+  cd uno = 1.;
+  cd due = 2.i;
+  std::cout << "cococo " << uno/due << std::endl;
 
+  double _mass = 1., x= .5, _width=1., _coupling = 1.;
+  cd den = _mass * _mass - x - 1i * _mass * _width;
+  std::cout << "cococo " << _coupling / den  << std::endl;
+
+  std::cout << "cococo " << Isobars->at(1).Evaluate(.5)  << std::endl;
+
+  // std::cout << "cg " <<SpecialFunc::ClebschGordan(1,-1,1,1,1,0) << std::endl;
 
   return 0;
 

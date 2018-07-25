@@ -26,15 +26,15 @@ const static double logfact[24] = {0.0, 0.0,
                                      4.23356164607534850e01, 4.53801388984769080e01,
                                      4.84711813518352239e01, 5.16066755677643736e01};
 
-int abs(int x) { return (x > 0) ? x : - x; }
-double clebsch_gordon(uint j1, int m1, uint j2, int m2, uint j, int m) {
-        return ((j1-j2+m) % 2 == 1 ? -1.0 : 1.0) * sqrt(2*j+1) *
-               gsl_sf_coupling_3j(2*j1, 2*j2, 2*j, 2*m1, 2*m2, -2*m);
+inline int abs(int x) { return (x > 0) ? x : - x; }
+inline double ClebschGordan(uint j1, int m1, uint j2, int m2, uint j, int m) {
+        return ((j1-j2+m) % 4 == 0 ? 1.0 : -1.0) * sqrt(j+1) *
+               gsl_sf_coupling_3j(j1, j2, j, m1, m2, -m);
 }
 
 // The implemented expression can be find in Wikipedia
 //     https://en.wikipedia.org/wiki/Jacobi_polynomials
-double jacobi_pols(uint n, uint a, uint b, double x) {
+inline double JacobiPols(uint n, uint a, uint b, double x) {
         // here comes the calculation of log(n!)
 
         if (n+a >= 24 || n+b >= 24) {
@@ -57,7 +57,7 @@ double jacobi_pols(uint n, uint a, uint b, double x) {
 // Eq. (3.74) of L. Biedenharn, J. Louck, and P. Carruthers, Angular Momentum in Quantum Physics: Theory and Application
 // see also (B1) of the FormalismII paper.
 // j, m1, m2 are doubled
-double wignerd_hat(uint j, int m1, int m2, double z) {
+inline double WignerDhat(uint j, int m1, int m2, double z) {
         double factor = ((abs(m1-m2)+m1-m2)) % 8 == 0 ? 1.0 : -1.0;
         int am1 = abs(m1), am2 = abs(m2);
         if (j % 2 != am1 % 2 || j % 2 != am2 % 2)  { std::cerr << "Error: j, m1, m2 not compatible\n"; return 0.; }
@@ -65,12 +65,20 @@ double wignerd_hat(uint j, int m1, int m2, double z) {
         int N = (am1 < am2) ? am1 : am2;
         return factor/pow(2,.5*M)*
                sqrt(gsl_sf_gamma((j-M)/2+1.)*gsl_sf_gamma((j+M)/2+1.)/(gsl_sf_gamma((j-N)/2+1.)*gsl_sf_gamma((j+N)/2+1.)))*
-               jacobi_pols((j-M)/2, abs(m1-m2)/2,abs(m1+m2)/2, z);
+               JacobiPols((j-M)/2, abs(m1-m2)/2,abs(m1+m2)/2, z);
+}
+
+inline double WignerDhat(uint j, int m1, int m2, bool eta, double z) {
+        int am1 = abs(m1), am2 = abs(m2);
+        int M = (am1 > am2) ? am1 : am2;
+        double factor = (m2 - M) % 4 == 0 ? 1.0 : -1.0;
+        if (!eta) factor = -factor;
+        return WignerDhat(j, m1, m2, z) + factor*WignerDhat(j, -m1, m2, z);
 }
 
 // j, m1, m2 are doubled
-double wignerd(uint j, int m1, int m2, double z) {
-        double hat = wignerd_hat(j, m1, m2, z);
+inline double WignerD(uint j, int m1, int m2, double z) {
+        double hat = WignerDhat(j, m1, m2, z);
         double xi = pow(sqrt(1-z),abs(m1-m2)/2)*pow(sqrt((1+z)),abs(m1+m2)/2);
         std::cout << "hat " << hat << " xi " << xi << std::endl;
         return hat*xi;

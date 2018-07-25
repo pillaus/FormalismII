@@ -9,7 +9,7 @@
 #include <iostream>
 #include <vector>
 #include "Isobar.h"
-
+#include "SpecialFunctions.h"
 
 #ifndef PENTA_H
 #define PENTA_H
@@ -18,22 +18,24 @@
 class PentaquarkMatrix {
 
 private:
-  double s, t, u, rs, ru, ps, qs, pu, qu, ps2, qs2, pu2, qu2, Eb_s, Ep_s, Epsi_s, num_s, num_u, Eb_u, Ep_u, Epsi_u, u2;
+  double s, t, u, rs, ru, ps, qs, pu, qu, ps2, qs2, pu2, qu2, Eb_s, Ep_s, Epsi_s, num_s, num_u, Eb_u, Ep_u, Epsi_u, u2, costheta_s, costheta_u;
   const double sp, sm, up, um, mp2, mpsi2, mb2, mK2;
   const double mb, mpsi, mK, mp;
 
   cd Structures[6][4][4][4];
   double Matrices[4][6][6];
   double lepton[4][4];
+  cd pbm[4][4], ppm[4][4];
   static const double metric[4];
   static const cd gamma[6][4][4];
   static const double over4PI;
-  int g5(int i) { if (i > 1) return i - 2; else return i+2; };
+  inline int g5(int i) { if (i > 1) return i - 2; else return i+2; };
+  inline double g0fy(int i, int j) { return ((i > 1 && j < 2)||((j > 1 && i < 2)) ) ? -1. : 1.; }
   std::vector<Isobar> *Isobars;
 
 
   void slash(double p[4], cd ret[4][4]);
-  void slashm(double p[4], double m, cd ret[4][4]);
+  void slash(double p[4], double m, cd ret[4][4]);
 
 
 public:
@@ -46,7 +48,7 @@ public:
 
   void SetIsobars(std::vector<Isobar> *_Isobars) { Isobars = _Isobars; }
 
-  double Evaluate();
+  cd Evaluate();
 
   double GetPCschannel(int i, int j);
   double GetPVschannel(int i, int j);
