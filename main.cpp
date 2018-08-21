@@ -15,7 +15,7 @@ int main ()
 {
 
 
-   PentaquarkMatrix *p = new PentaquarkMatrix();
+
   // p->SetKinematics(4., 20.);
   // p->Print();
 
@@ -25,21 +25,35 @@ int main ()
   double pp[4] = { -203.5984 , -820.3133 , 36541.246 , 36563.061 };
   shuffle(pmu_p);shuffle(pmu_m);shuffle(pK);shuffle(pp);
 
+  double mpsi = 0., mb = 0., mp = 0., mK= 0.;
+  for (int mu = 0; mu < 4; mu++)
+  {
+    mpsi += pow(pmu_p[mu] + pmu_m[mu], 2) * ( mu == 0 ? 1 : -1);
+    mb += pow(pmu_p[mu] + pmu_m[mu] + pK[mu] + pp[mu], 2) * ( mu == 0 ? 1 : -1);
+    mK += pow(pK[mu], 2) * ( mu == 0 ? 1 : -1);
+    mp += pow(pp[mu], 2) * ( mu == 0 ? 1 : -1);
+  }
+  mpsi = sqrt(mpsi); mb = sqrt(mb); mK = sqrt(mK), mp = sqrt(mp);
+
+   PentaquarkMatrix *p = new PentaquarkMatrix(mb, mpsi, mp, mK);
 
 //   Isobar(double mass, double width, cd coupling unsigned int j, unsigned int spin, unsigned int L, bool eta, char channel)
   std::vector<Isobar> *Isobars = new std::vector<Isobar>();
 
   //Isobar iso;
   Isobars->push_back(Isobar(1.519, 0.156, 1., 3, 3, 2, true, true, 's', Isobar::BreitWigner));
-  Isobars->push_back(Isobar(1.,1., 1., 3, 3, 2, true, true, 's', Isobar::BreitWigner));
-  std::cout << Isobars->at(0).J() << std::endl;
+//  Isobars->push_back(Isobar(1.,1., 1., 3, 3, 2, true, true, 's', Isobar::BreitWigner));
+  //std::cout << Isobars->at(0).J() << std::endl;
 
   p->SetIsobars(Isobars);
 
   p->SetKinematics(pmu_p, pmu_m, pK, pp);
 
-  std::cout << p->Evaluate() << std::endl;
+//p->Print();
 
+   std::cout << p->Evaluate() << std::endl;
+
+ return 0;
   cd uno = 1.;
   cd due = 2.i;
   std::cout << "cococo " << uno/due << std::endl;

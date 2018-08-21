@@ -8,7 +8,7 @@
 #define DEBUG_H
 #include "Isobar.h"
 
-const int Isobar::BreitWigner = 0;
+
 
   /**
       Constructor. It gets the masses as optional input. Default from LivePDG, 2018-05-13

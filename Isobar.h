@@ -36,7 +36,7 @@ public:
   char Channel () { return _channel; };
   cd Evaluate(double x);
 
-  static const int BreitWigner;
+  static const int BreitWigner = 0;
 
 private:
   double _mass, _width;

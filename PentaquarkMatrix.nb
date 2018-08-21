@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     74495,       2160]
-NotebookOptionsPosition[     73737,       2130]
-NotebookOutlinePosition[     74164,       2147]
-CellTagsIndexPosition[     74121,       2144]
+NotebookDataLength[     88464,       2492]
+NotebookOptionsPosition[     87354,       2453]
+NotebookOutlinePosition[     87880,       2472]
+CellTagsIndexPosition[     87837,       2469]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -108,78 +108,76 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{"MinvSPC", "=", 
    RowBox[{
-    RowBox[{"-", 
-     FractionBox[
-      SqrtBox[
-       RowBox[{"Ep", "+", "mp"}]], 
-      SqrtBox[
-       RowBox[{"Eb", "+", "mb"}]]]}], 
+    FractionBox[
+     SqrtBox[
+      RowBox[{"Ep", "+", "mp"}]], 
+     SqrtBox[
+      RowBox[{"Eb", "+", "mb"}]]], 
     TagBox[
      RowBox[{"(", "\[NoBreak]", GridBox[{
         {
-         FractionBox[
-          SuperscriptBox["m\[Psi]", "3"], 
-          RowBox[{"4", " ", 
-           SuperscriptBox["p", "2"], " ", "mp", " ", "s"}]], 
          RowBox[{"-", 
           FractionBox[
-           RowBox[{
-            SuperscriptBox["m\[Psi]", "2"], " ", 
-            RowBox[{"(", 
-             RowBox[{"mb", "+", 
-              SqrtBox["s"]}], ")"}]}], 
-           RowBox[{"2", " ", 
-            SqrtBox["2"], 
+           SuperscriptBox["m\[Psi]", "3"], 
+           RowBox[{"4", " ", 
             SuperscriptBox["p", "2"], " ", "mp", " ", "s"}]]}], 
-         RowBox[{"-", 
-          FractionBox[
-           RowBox[{
-            RowBox[{
-             RowBox[{"-", 
-              RowBox[{"(", 
-               RowBox[{"Eb", "+", "mb"}], ")"}]}], " ", 
-             RowBox[{"(", 
-              RowBox[{
-               RowBox[{"mp", " ", 
-                SuperscriptBox["m\[Psi]", "2"]}], "+", 
-               RowBox[{"Ep", " ", 
-                RowBox[{"(", 
-                 RowBox[{
-                  RowBox[{"2", " ", "E\[Psi]", " ", "mb"}], "+", 
-                  SuperscriptBox["mb", "2"], "-", "s"}], ")"}]}]}], ")"}]}], 
-            "+", 
-            RowBox[{"num", " ", 
-             RowBox[{"(", 
-              RowBox[{
-               RowBox[{"2", " ", "E\[Psi]", " ", "mb"}], "-", 
-               SuperscriptBox["mb", "2"], "+", "s"}], ")"}]}]}], 
-           RowBox[{"4", " ", 
-            SuperscriptBox["p", "2"], 
-            SuperscriptBox["mp", "2"], " ", 
-            SqrtBox["s"]}]]}], 
-         RowBox[{"-", 
-          FractionBox[
-           RowBox[{
-            SuperscriptBox["m\[Psi]", "2"], 
-            RowBox[{"(", 
-             RowBox[{"Eb", "+", "mb"}], ")"}]}], 
-           RowBox[{"4", " ", 
-            SuperscriptBox["p", "2"], " ", 
-            RowBox[{"(", 
-             RowBox[{"Ep", "+", "mp"}], ")"}], " ", "s"}]]}], 
          FractionBox[
-          RowBox[{"m\[Psi]", " ", 
+          RowBox[{
+           SuperscriptBox["m\[Psi]", "2"], " ", 
            RowBox[{"(", 
-            RowBox[{
-             RowBox[{"-", "mb"}], "+", 
-             SqrtBox["s"]}], ")"}], 
+            RowBox[{"mb", "+", 
+             SqrtBox["s"]}], ")"}]}], 
+          RowBox[{"2", " ", 
+           SqrtBox["2"], 
+           SuperscriptBox["p", "2"], " ", "mp", " ", "s"}]], 
+         FractionBox[
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", 
+             RowBox[{"(", 
+              RowBox[{"Eb", "+", "mb"}], ")"}]}], " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"mp", " ", 
+               SuperscriptBox["m\[Psi]", "2"]}], "+", 
+              RowBox[{"Ep", " ", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"2", " ", "E\[Psi]", " ", "mb"}], "+", 
+                 SuperscriptBox["mb", "2"], "-", "s"}], ")"}]}]}], ")"}]}], 
+           "+", 
+           RowBox[{"num", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"2", " ", "E\[Psi]", " ", "mb"}], "-", 
+              SuperscriptBox["mb", "2"], "+", "s"}], ")"}]}]}], 
+          RowBox[{"4", " ", 
+           SuperscriptBox["p", "2"], 
+           SuperscriptBox["mp", "2"], " ", 
+           SqrtBox["s"]}]], 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox["m\[Psi]", "2"], 
            RowBox[{"(", 
             RowBox[{"Eb", "+", "mb"}], ")"}]}], 
-          RowBox[{"2", " ", 
-           SqrtBox["2"], " ", 
+          RowBox[{"4", " ", 
            SuperscriptBox["p", "2"], " ", 
            RowBox[{"(", 
             RowBox[{"Ep", "+", "mp"}], ")"}], " ", "s"}]], 
+         RowBox[{"-", 
+          FractionBox[
+           RowBox[{"m\[Psi]", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "mb"}], "+", 
+              SqrtBox["s"]}], ")"}], 
+            RowBox[{"(", 
+             RowBox[{"Eb", "+", "mb"}], ")"}]}], 
+           RowBox[{"2", " ", 
+            SqrtBox["2"], " ", 
+            SuperscriptBox["p", "2"], " ", 
+            RowBox[{"(", 
+             RowBox[{"Ep", "+", "mp"}], ")"}], " ", "s"}]]}], 
          FractionBox[
           RowBox[{
            RowBox[{"num", " ", 
@@ -211,41 +209,43 @@ Cell[BoxData[{
             RowBox[{"Ep", "+", "mp"}], ")"}], " ", "m\[Psi]", " ", 
            SqrtBox["s"]}]]},
         {"0", "0", 
-         FractionBox[
-          RowBox[{"mb", "+", 
-           SqrtBox["s"]}], 
-          RowBox[{"2", " ", 
-           SuperscriptBox["mp", "2"]}]], "0", "0", 
-         FractionBox[
-          RowBox[{
-           RowBox[{"(", 
-            RowBox[{"Eb", "+", "mb"}], ")"}], " ", 
-           RowBox[{"(", 
-            RowBox[{"mb", "-", 
-             SqrtBox["s"]}], ")"}]}], 
-          RowBox[{"2", " ", "mp", " ", 
-           RowBox[{"(", 
-            RowBox[{"Ep", "+", "mp"}], ")"}], " ", "m\[Psi]"}]]},
-        {
-         FractionBox[
-          RowBox[{
-           RowBox[{"mb", " ", "m\[Psi]"}], "+", 
-           RowBox[{"m\[Psi]", " ", 
-            SqrtBox["s"]}]}], 
-          RowBox[{"4", " ", 
-           SuperscriptBox["p", "2"], " ", "mp", " ", "s"}]], 
          RowBox[{"-", 
           FractionBox[
-           SuperscriptBox["m\[Psi]", "2"], 
-           RowBox[{"2", 
-            SqrtBox["2"], "  ", 
-            SuperscriptBox["p", "2"], "mp", " ", "s"}]]}], 
+           RowBox[{"mb", "+", 
+            SqrtBox["s"]}], 
+           RowBox[{"2", " ", 
+            SuperscriptBox["mp", "2"]}]]}], "0", "0", 
+         RowBox[{"-", 
+          FractionBox[
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"Eb", "+", "mb"}], ")"}], " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "mb"}], "+", 
+              SqrtBox["s"]}], ")"}]}], 
+           RowBox[{"2", " ", "mp", " ", 
+            RowBox[{"(", 
+             RowBox[{"Ep", "+", "mp"}], ")"}], " ", "m\[Psi]"}]]}]},
+        {
+         RowBox[{"-", 
+          FractionBox[
+           RowBox[{
+            RowBox[{"mb", " ", "m\[Psi]"}], "+", 
+            RowBox[{"m\[Psi]", " ", 
+             SqrtBox["s"]}]}], 
+           RowBox[{"4", " ", 
+            SuperscriptBox["p", "2"], " ", "mp", " ", "s"}]]}], 
+         FractionBox[
+          SuperscriptBox["m\[Psi]", "2"], 
+          RowBox[{"2", 
+           SqrtBox["2"], "  ", 
+           SuperscriptBox["p", "2"], "mp", " ", "s"}]], 
          FractionBox[
           RowBox[{
            RowBox[{
-            RowBox[{"-", 
-             RowBox[{"(", 
-              RowBox[{"Eb", "+", "mb"}], ")"}]}], " ", 
+            RowBox[{"(", 
+             RowBox[{"Eb", "+", "mb"}], ")"}], " ", 
             RowBox[{"(", 
              RowBox[{
               RowBox[{
@@ -256,7 +256,7 @@ Cell[BoxData[{
                RowBox[{"(", 
                 RowBox[{"Eb", "-", "mb"}], ")"}], 
                RowBox[{"(", 
-                RowBox[{"Ep", "+", "mp"}], ")"}]}]}], ")"}]}], "+", 
+                RowBox[{"Ep", "+", "mp"}], ")"}]}]}], ")"}]}], "-", 
            RowBox[{
             RowBox[{"(", 
              RowBox[{"Eb", "-", "E\[Psi]", "+", "mb"}], ")"}], " ", "num"}]}], 
@@ -264,57 +264,56 @@ Cell[BoxData[{
            SuperscriptBox["p", "2"], " ", 
            SuperscriptBox["mp", "2"], " ", 
            SqrtBox["s"]}]], 
-         FractionBox[
-          RowBox[{
-           RowBox[{"(", 
-            RowBox[{
-             RowBox[{"-", "mb"}], "+", 
-             SqrtBox["s"]}], ")"}], 
-           RowBox[{"(", 
-            RowBox[{"Eb", "+", "mb"}], ")"}]}], 
-          RowBox[{"4", " ", 
-           SuperscriptBox["p", "2"], " ", 
-           RowBox[{"(", 
-            RowBox[{"Ep", "+", "mp"}], ")"}], " ", "s"}]], 
-         RowBox[{"-", 
-          FractionBox[
-           RowBox[{"m\[Psi]", 
-            RowBox[{"(", 
-             RowBox[{"Eb", "+", "mb"}], ")"}]}], 
-           RowBox[{"2", " ", 
-            SqrtBox["2"], " ", 
-            SuperscriptBox["p", "2"], 
-            RowBox[{"(", 
-             RowBox[{"Ep", "+", "mp"}], ")"}], " ", "s"}]]}], 
          RowBox[{"-", 
           FractionBox[
            RowBox[{
-            RowBox[{
-             RowBox[{"(", 
-              RowBox[{
-               RowBox[{"-", "Eb"}], "+", "E\[Psi]", "+", "mb"}], ")"}], " ", 
-             RowBox[{"(", 
-              RowBox[{"Eb", "+", "mb"}], ")"}], "num"}], "+", 
-            RowBox[{
-             SuperscriptBox["p", "2"], " ", 
-             RowBox[{"(", 
-              RowBox[{
-               RowBox[{"Ep", " ", 
-                RowBox[{"(", 
-                 RowBox[{"Eb", "-", "E\[Psi]", "+", "mb"}], ")"}]}], "-", 
-               RowBox[{"mp", " ", 
-                RowBox[{"(", 
-                 RowBox[{"mb", "+", 
-                  SqrtBox["s"]}], ")"}]}]}], ")"}]}]}], 
-           RowBox[{"4", 
-            SuperscriptBox["p", "2"], " ", "mp", " ", 
             RowBox[{"(", 
-             RowBox[{"Ep", "+", "mp"}], ")"}], " ", "m\[Psi]", " ", 
-            SqrtBox["s"]}]]}]},
-        {"0", "0", 
-         FractionBox["1", 
+             RowBox[{
+              RowBox[{"-", "mb"}], "+", 
+              SqrtBox["s"]}], ")"}], 
+            RowBox[{"(", 
+             RowBox[{"Eb", "+", "mb"}], ")"}]}], 
+           RowBox[{"4", " ", 
+            SuperscriptBox["p", "2"], " ", 
+            RowBox[{"(", 
+             RowBox[{"Ep", "+", "mp"}], ")"}], " ", "s"}]]}], 
+         FractionBox[
+          RowBox[{"m\[Psi]", 
+           RowBox[{"(", 
+            RowBox[{"Eb", "+", "mb"}], ")"}]}], 
           RowBox[{"2", " ", 
-           SuperscriptBox["mp", "2"]}]], "0", "0", 
+           SqrtBox["2"], " ", 
+           SuperscriptBox["p", "2"], 
+           RowBox[{"(", 
+            RowBox[{"Ep", "+", "mp"}], ")"}], " ", "s"}]], 
+         FractionBox[
+          RowBox[{
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"Eb", "-", "E\[Psi]", "-", "mb"}], ")"}], " ", 
+            RowBox[{"(", 
+             RowBox[{"Eb", "+", "mb"}], ")"}], "num"}], "-", 
+           RowBox[{
+            SuperscriptBox["p", "2"], " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"Ep", " ", 
+               RowBox[{"(", 
+                RowBox[{"Eb", "-", "E\[Psi]", "+", "mb"}], ")"}]}], "-", 
+              RowBox[{"mp", " ", 
+               RowBox[{"(", 
+                RowBox[{"mb", "+", 
+                 SqrtBox["s"]}], ")"}]}]}], ")"}]}]}], 
+          RowBox[{"4", 
+           SuperscriptBox["p", "2"], " ", "mp", " ", 
+           RowBox[{"(", 
+            RowBox[{"Ep", "+", "mp"}], ")"}], " ", "m\[Psi]", " ", 
+           SqrtBox["s"]}]]},
+        {"0", "0", 
+         RowBox[{"-", 
+          FractionBox["1", 
+           RowBox[{"2", " ", 
+            SuperscriptBox["mp", "2"]}]]}], "0", "0", 
          FractionBox[
           RowBox[{"(", 
            RowBox[{"Eb", "+", "mb"}], ")"}], 
@@ -322,45 +321,42 @@ Cell[BoxData[{
            RowBox[{"(", 
             RowBox[{"Ep", "+", "mp"}], ")"}], " "}]]},
         {
-         RowBox[{"-", 
-          FractionBox[
-           RowBox[{"m\[Psi]", 
+         FractionBox[
+          RowBox[{"m\[Psi]", 
+           RowBox[{"(", 
+            RowBox[{
+             SqrtBox["s"], "-", "mb"}], ")"}], 
+           RowBox[{"(", 
+            RowBox[{"Eb", "+", "mb"}], ")"}], " "}], 
+          RowBox[{"4", " ", 
+           SuperscriptBox["p", "2"], " ", "mp", " ", 
+           SqrtBox["s"]}]], "0", 
+         FractionBox[
+          RowBox[{
+           RowBox[{"num", " ", 
             RowBox[{"(", 
              RowBox[{
-              SqrtBox["s"], "-", "mb"}], ")"}], 
+              RowBox[{"-", "mb"}], "+", 
+              SqrtBox["s"]}], ")"}], 
             RowBox[{"(", 
-             RowBox[{"Eb", "+", "mb"}], ")"}], " "}], 
-           RowBox[{"4", " ", 
-            SuperscriptBox["p", "2"], " ", "mp", " ", 
-            SqrtBox["s"]}]]}], "0", 
-         RowBox[{"-", 
-          FractionBox[
+             RowBox[{"Eb", "+", "mb"}], ")"}]}], "+", 
            RowBox[{
-            RowBox[{"num", " ", 
-             RowBox[{"(", 
-              RowBox[{
-               RowBox[{"-", "mb"}], "+", 
-               SqrtBox["s"]}], ")"}], 
-             RowBox[{"(", 
-              RowBox[{"Eb", "+", "mb"}], ")"}]}], "+", 
-            RowBox[{
-             SuperscriptBox["p", "2"], " ", 
-             RowBox[{"(", 
-              RowBox[{"Ep", "-", "mp"}], ")"}], " ", 
-             RowBox[{"(", 
-              RowBox[{"mb", "+", 
-               SqrtBox["s"]}], ")"}]}]}], 
-           RowBox[{"4", " ", 
             SuperscriptBox["p", "2"], " ", 
-            SuperscriptBox["mp", "2"]}]]}], 
-         RowBox[{"-", 
-          FractionBox[
-           RowBox[{
-            SqrtBox["s"], "+", "mb"}], 
-           RowBox[{"4", " ", 
             RowBox[{"(", 
-             RowBox[{"Ep", "+", "mp"}], ")"}], 
-            SqrtBox["s"]}]]}], "0", 
+             RowBox[{"Ep", "-", "mp"}], ")"}], " ", 
+            RowBox[{"(", 
+             RowBox[{"mb", "+", 
+              SqrtBox["s"]}], ")"}]}]}], 
+          RowBox[{"4", " ", 
+           SuperscriptBox["p", "2"], " ", 
+           SuperscriptBox["mp", "2"]}]], 
+         FractionBox[
+          RowBox[{
+           SqrtBox["s"], "+", "mb"}], 
+          RowBox[{"4", " ", 
+           RowBox[{"(", 
+            RowBox[{"Ep", "+", "mp"}], ")"}], 
+           SqrtBox["s"]}]], "0", 
          RowBox[{"-", 
           FractionBox[
            RowBox[{
@@ -381,31 +377,32 @@ Cell[BoxData[{
             RowBox[{"(", 
              RowBox[{"Ep", "+", "mp"}], ")"}], " ", "m\[Psi]"}]]}]},
         {
-         RowBox[{"-", 
-          FractionBox[
-           RowBox[{"m\[Psi]", 
-            RowBox[{"(", 
-             RowBox[{"Eb", "+", "mb"}], ")"}]}], 
-           RowBox[{"4", " ", 
-            SuperscriptBox["p", "2"], " ", "mp", " ", 
-            SqrtBox["s"]}]]}], "0", 
+         FractionBox[
+          RowBox[{"m\[Psi]", 
+           RowBox[{"(", 
+            RowBox[{"Eb", "+", "mb"}], ")"}]}], 
+          RowBox[{"4", " ", 
+           SuperscriptBox["p", "2"], " ", "mp", " ", 
+           SqrtBox["s"]}]], "0", 
          FractionBox[
           RowBox[{
            RowBox[{
-            RowBox[{"(", 
-             RowBox[{"Ep", "-", "mp"}], ")"}], 
-            SuperscriptBox["p", "2"]}], "-", 
+            RowBox[{"-", 
+             RowBox[{"(", 
+              RowBox[{"Ep", "-", "mp"}], ")"}]}], 
+            SuperscriptBox["p", "2"]}], "+", 
            RowBox[{"num", 
             RowBox[{"(", 
              RowBox[{"Eb", "+", "mb"}], ")"}]}]}], 
           RowBox[{"4", " ", 
            SuperscriptBox["mp", "2"], 
            SuperscriptBox["p", "2"]}]], 
-         FractionBox["1", 
-          RowBox[{"4", " ", 
-           RowBox[{"(", 
-            RowBox[{"Ep", "+", "mp"}], ")"}], " ", 
-           SqrtBox["s"]}]], "0", 
+         RowBox[{"-", 
+          FractionBox["1", 
+           RowBox[{"4", " ", 
+            RowBox[{"(", 
+             RowBox[{"Ep", "+", "mp"}], ")"}], " ", 
+            SqrtBox["s"]}]]}], "0", 
          FractionBox[
           RowBox[{
            RowBox[{
@@ -437,7 +434,10 @@ Cell[BoxData[{
    3.7350524212683973`*^9}, {3.735052888383463*^9, 3.735052888460574*^9}, {
    3.735159458502796*^9, 3.735159458899499*^9}, {3.735226181660345*^9, 
    3.7352264025931063`*^9}, {3.735226774490884*^9, 3.735226804336187*^9}, 
-   3.735227106499413*^9, {3.735234975132551*^9, 3.735234975355546*^9}}]
+   3.735227106499413*^9, {3.735234975132551*^9, 3.735234975355546*^9}, {
+   3.743700422147357*^9, 3.743700493554867*^9}, 3.743700661096181*^9, {
+   3.743700772674138*^9, 3.7437007829176693`*^9}, {3.7437008243383923`*^9, 
+   3.743700922069725*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -530,34 +530,33 @@ Cell[BoxData[
        "s"}]}]}], "}"}]}], ";", 
   RowBox[{"MinvSPV", "=", 
    RowBox[{
-    RowBox[{"-", 
-     FractionBox[
-      SqrtBox[
-       RowBox[{"Ep", "+", "mp"}]], 
-      SqrtBox[
-       RowBox[{"Eb", "+", "mb"}]]]}], 
+    FractionBox[
+     SqrtBox[
+      RowBox[{"Ep", "+", "mp"}]], 
+     SqrtBox[
+      RowBox[{"Eb", "+", "mb"}]]], 
     RowBox[{"(", "\[NoBreak]", GridBox[{
        {
-        FractionBox[
-         RowBox[{
-          SuperscriptBox["m\[Psi]", "2"], 
-          RowBox[{"(", 
-           RowBox[{"Eb", "+", "mb"}], ")"}]}], 
-         RowBox[{"4", 
-          SuperscriptBox["p", "2"], "mp", " ", 
-          SqrtBox["s"]}]], 
         RowBox[{"-", 
          FractionBox[
           RowBox[{
-           SqrtBox["2"], " ", "m\[Psi]", 
-           RowBox[{"(", 
-            RowBox[{
-             SqrtBox["s"], "-", "mb"}], ")"}], 
+           SuperscriptBox["m\[Psi]", "2"], 
            RowBox[{"(", 
             RowBox[{"Eb", "+", "mb"}], ")"}]}], 
           RowBox[{"4", 
-           SuperscriptBox["p", "2"], " ", "mp", 
+           SuperscriptBox["p", "2"], "mp", " ", 
            SqrtBox["s"]}]]}], 
+        FractionBox[
+         RowBox[{
+          SqrtBox["2"], " ", "m\[Psi]", 
+          RowBox[{"(", 
+           RowBox[{
+            SqrtBox["s"], "-", "mb"}], ")"}], 
+          RowBox[{"(", 
+           RowBox[{"Eb", "+", "mb"}], ")"}]}], 
+         RowBox[{"4", 
+          SuperscriptBox["p", "2"], " ", "mp", 
+          SqrtBox["s"]}]], 
         RowBox[{"-", 
          FractionBox[
           RowBox[{
@@ -588,23 +587,9 @@ Cell[BoxData[
           RowBox[{"4", " ", 
            SuperscriptBox["p", "2"], " ", 
            SuperscriptBox["mp", "2"], " ", "m\[Psi]"}]]}], 
-        RowBox[{"-", 
-         FractionBox[
-          SuperscriptBox["m\[Psi]", "3"], 
-          RowBox[{"4", " ", 
-           SuperscriptBox["p", "2"], " ", 
-           RowBox[{"(", 
-            RowBox[{"Ep", "+", "mp"}], ")"}], " ", 
-           SuperscriptBox["s", 
-            RowBox[{"3", "/", "2"}]]}]]}], 
         FractionBox[
-         RowBox[{
-          SuperscriptBox["m\[Psi]", "2"], " ", 
-          RowBox[{"(", 
-           RowBox[{"mb", "+", 
-            SqrtBox["s"]}], ")"}]}], 
-         RowBox[{"2", " ", 
-          SqrtBox["2"], " ", 
+         SuperscriptBox["m\[Psi]", "3"], 
+         RowBox[{"4", " ", 
           SuperscriptBox["p", "2"], " ", 
           RowBox[{"(", 
            RowBox[{"Ep", "+", "mp"}], ")"}], " ", 
@@ -613,30 +598,43 @@ Cell[BoxData[
         RowBox[{"-", 
          FractionBox[
           RowBox[{
-           RowBox[{
-            RowBox[{"(", 
-             RowBox[{"Eb", "+", "mb"}], ")"}], " ", 
-            RowBox[{"(", 
-             RowBox[{
-              RowBox[{
-               RowBox[{"-", "mp"}], " ", 
-               SuperscriptBox["m\[Psi]", "2"]}], "+", 
-              RowBox[{"Ep", " ", 
-               RowBox[{"(", 
-                RowBox[{
-                 RowBox[{"2", " ", "E\[Psi]", " ", "mb"}], "+", 
-                 SuperscriptBox["mb", "2"], "-", "s"}], ")"}]}]}], ")"}]}], 
-           "+", 
-           RowBox[{"num", " ", 
-            RowBox[{"(", 
-             RowBox[{
-              RowBox[{
-               RowBox[{"-", "2"}], " ", "E\[Psi]", " ", "mb"}], "+", 
-              SuperscriptBox["mb", "2"], "-", "s"}], ")"}]}]}], 
-          RowBox[{"4", " ", 
-           SuperscriptBox["p", "2"], " ", "mp", " ", 
+           SuperscriptBox["m\[Psi]", "2"], " ", 
            RowBox[{"(", 
-            RowBox[{"Ep", "+", "mp"}], ")"}], " ", "s"}]]}]},
+            RowBox[{"mb", "+", 
+             SqrtBox["s"]}], ")"}]}], 
+          RowBox[{"2", " ", 
+           SqrtBox["2"], " ", 
+           SuperscriptBox["p", "2"], " ", 
+           RowBox[{"(", 
+            RowBox[{"Ep", "+", "mp"}], ")"}], " ", 
+           SuperscriptBox["s", 
+            RowBox[{"3", "/", "2"}]]}]]}], 
+        FractionBox[
+         RowBox[{
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"Eb", "+", "mb"}], ")"}], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"-", "mp"}], " ", 
+              SuperscriptBox["m\[Psi]", "2"]}], "+", 
+             RowBox[{"Ep", " ", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"2", " ", "E\[Psi]", " ", "mb"}], "+", 
+                SuperscriptBox["mb", "2"], "-", "s"}], ")"}]}]}], ")"}]}], 
+          "+", 
+          RowBox[{"num", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"-", "2"}], " ", "E\[Psi]", " ", "mb"}], "+", 
+             SuperscriptBox["mb", "2"], "-", "s"}], ")"}]}]}], 
+         RowBox[{"4", " ", 
+          SuperscriptBox["p", "2"], " ", "mp", " ", 
+          RowBox[{"(", 
+           RowBox[{"Ep", "+", "mp"}], ")"}], " ", "s"}]]},
        {"0", "0", 
         FractionBox[
          RowBox[{
@@ -657,25 +655,25 @@ Cell[BoxData[
             RowBox[{"Ep", " ", "+", "mp"}], ")"}], " ", "mp", 
            SqrtBox["s"]}]]}]},
        {
-        RowBox[{"-", 
-         FractionBox[
-          RowBox[{
-           RowBox[{"(", 
-            RowBox[{
-             SqrtBox["s"], "-", "mb"}], ")"}], 
-           RowBox[{"(", 
-            RowBox[{"Eb", "+", "mb"}], ")"}]}], 
-          RowBox[{"4", 
-           SuperscriptBox["p", "2"], " ", "mp", " ", 
-           SqrtBox["s"]}]]}], 
         FractionBox[
-         RowBox[{"m\[Psi]", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            SqrtBox["s"], "-", "mb"}], ")"}], 
           RowBox[{"(", 
            RowBox[{"Eb", "+", "mb"}], ")"}]}], 
-         RowBox[{
-          SqrtBox["2"], " ", "2", 
-          SuperscriptBox["p", "2"], "mp", " ", 
+         RowBox[{"4", 
+          SuperscriptBox["p", "2"], " ", "mp", " ", 
           SqrtBox["s"]}]], 
+        RowBox[{"-", 
+         FractionBox[
+          RowBox[{"m\[Psi]", 
+           RowBox[{"(", 
+            RowBox[{"Eb", "+", "mb"}], ")"}]}], 
+          RowBox[{
+           SqrtBox["2"], " ", "2", 
+           SuperscriptBox["p", "2"], "mp", " ", 
+           SqrtBox["s"]}]]}], 
         FractionBox[
          RowBox[{
           RowBox[{
@@ -699,53 +697,52 @@ Cell[BoxData[
          RowBox[{"4", " ", 
           SuperscriptBox["p", "2"], " ", 
           SuperscriptBox["mp", "2"], " ", "m\[Psi]"}]], 
-        RowBox[{"-", 
-         FractionBox[
-          RowBox[{"m\[Psi]", " ", 
-           RowBox[{"(", 
-            RowBox[{"mb", "+", 
-             SqrtBox["s"]}], ")"}]}], 
-          RowBox[{"4", " ", 
-           SuperscriptBox["p", "2"], 
-           RowBox[{"(", 
-            RowBox[{"Ep", "+", "mp"}], ")"}], " ", 
-           SuperscriptBox["s", 
-            RowBox[{"3", "/", "2"}]]}]]}], 
         FractionBox[
-         SuperscriptBox["m\[Psi]", "2"], 
-         RowBox[{"2", " ", 
-          SqrtBox["2"], " ", 
-          SuperscriptBox["p", "2"], " ", 
+         RowBox[{"m\[Psi]", " ", 
+          RowBox[{"(", 
+           RowBox[{"mb", "+", 
+            SqrtBox["s"]}], ")"}]}], 
+         RowBox[{"4", " ", 
+          SuperscriptBox["p", "2"], 
           RowBox[{"(", 
            RowBox[{"Ep", "+", "mp"}], ")"}], " ", 
           SuperscriptBox["s", 
            RowBox[{"3", "/", "2"}]]}]], 
         RowBox[{"-", 
          FractionBox[
-          RowBox[{
-           RowBox[{
-            RowBox[{"(", 
-             RowBox[{"Eb", "-", "E\[Psi]", "+", "mb"}], ")"}], " ", "num"}], 
-           "+", 
-           RowBox[{
-            RowBox[{"(", 
-             RowBox[{"Eb", "+", "mb"}], ")"}], " ", 
-            RowBox[{"(", 
-             RowBox[{
-              RowBox[{"Ep", " ", 
-               RowBox[{"(", 
-                RowBox[{
-                 RowBox[{"-", "Eb"}], "+", "E\[Psi]", "+", "mb"}], ")"}]}], 
-              "+", 
-              RowBox[{"mp", " ", 
-               RowBox[{"(", 
-                RowBox[{
-                 RowBox[{"-", "mb"}], "+", 
-                 SqrtBox["s"]}], ")"}]}]}], ")"}]}]}], 
-          RowBox[{"4", " ", 
-           SuperscriptBox["p", "2"], " ", "mp", " ", 
+          SuperscriptBox["m\[Psi]", "2"], 
+          RowBox[{"2", " ", 
+           SqrtBox["2"], " ", 
+           SuperscriptBox["p", "2"], " ", 
            RowBox[{"(", 
-            RowBox[{"Ep", "+", "mp"}], ")"}], " ", "s"}]]}]},
+            RowBox[{"Ep", "+", "mp"}], ")"}], " ", 
+           SuperscriptBox["s", 
+            RowBox[{"3", "/", "2"}]]}]]}], 
+        FractionBox[
+         RowBox[{
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"Eb", "-", "E\[Psi]", "+", "mb"}], ")"}], " ", "num"}], 
+          "+", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"Eb", "+", "mb"}], ")"}], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"Ep", " ", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "Eb"}], "+", "E\[Psi]", "+", "mb"}], ")"}]}], 
+             "+", 
+             RowBox[{"mp", " ", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "mb"}], "+", 
+                SqrtBox["s"]}], ")"}]}]}], ")"}]}]}], 
+         RowBox[{"4", " ", 
+          SuperscriptBox["p", "2"], " ", "mp", " ", 
+          RowBox[{"(", 
+           RowBox[{"Ep", "+", "mp"}], ")"}], " ", "s"}]]},
        {"0", "0", 
         RowBox[{"-", 
          FractionBox[
@@ -765,10 +762,11 @@ Cell[BoxData[
              RowBox[{"2", " ", "Eb", " ", "mp"}], "+", 
              RowBox[{"2", " ", "E\[Psi]", " ", "mp"}]}], ")"}]}]]}]},
        {
-        FractionBox[
-         RowBox[{"mb", "+", 
-          SqrtBox["s"]}], 
-         RowBox[{"4", " ", "mp"}]], "0", 
+        RowBox[{"-", 
+         FractionBox[
+          RowBox[{"mb", "+", 
+           SqrtBox["s"]}], 
+          RowBox[{"4", " ", "mp"}]]}], "0", 
         FractionBox[
          RowBox[{
           RowBox[{"(", 
@@ -789,42 +787,41 @@ Cell[BoxData[
           SqrtBox["s"]}], 
          RowBox[{"4", " ", 
           SuperscriptBox["mp", "2"], " ", "m\[Psi]"}]], 
-        FractionBox[
-         RowBox[{"m\[Psi]", " ", 
-          RowBox[{"(", 
-           RowBox[{
-            SqrtBox["s"], "-", "mb"}], ")"}], 
-          RowBox[{"(", 
-           RowBox[{"Eb", "+", "mb"}], ")"}], " "}], 
-         RowBox[{"4", " ", 
-          SuperscriptBox["p", "2"], 
-          RowBox[{"(", 
-           RowBox[{"Ep", "+", "mp"}], ")"}], " ", "s"}]], "0", 
         RowBox[{"-", 
          FractionBox[
-          RowBox[{
-           RowBox[{
-            RowBox[{"(", 
-             RowBox[{"Eb", "+", "mb"}], ")"}], "num", " ", 
-            RowBox[{"(", 
-             RowBox[{"mb", "-", 
-              SqrtBox["s"]}], ")"}]}], "-", 
-           RowBox[{
-            SuperscriptBox["p", "2"], " ", 
-            RowBox[{"(", 
-             RowBox[{"Ep", "+", "mp"}], ")"}], " ", 
-            RowBox[{"(", 
-             RowBox[{"mb", "+", 
-              SqrtBox["s"]}], ")"}]}]}], 
+          RowBox[{"m\[Psi]", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             SqrtBox["s"], "-", "mb"}], ")"}], 
+           RowBox[{"(", 
+            RowBox[{"Eb", "+", "mb"}], ")"}], " "}], 
           RowBox[{"4", " ", 
-           SuperscriptBox["p", "2"], " ", "mp", " ", 
+           SuperscriptBox["p", "2"], 
+           RowBox[{"(", 
+            RowBox[{"Ep", "+", "mp"}], ")"}], " ", "s"}]]}], "0", 
+        FractionBox[
+         RowBox[{
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"Eb", "+", "mb"}], ")"}], "num", " ", 
+           RowBox[{"(", 
+            RowBox[{"mb", "-", 
+             SqrtBox["s"]}], ")"}]}], "-", 
+          RowBox[{
+           SuperscriptBox["p", "2"], " ", 
            RowBox[{"(", 
             RowBox[{"Ep", "+", "mp"}], ")"}], " ", 
-           SqrtBox["s"]}]]}]},
+           RowBox[{"(", 
+            RowBox[{"mb", "+", 
+             SqrtBox["s"]}], ")"}]}]}], 
+         RowBox[{"4", " ", 
+          SuperscriptBox["p", "2"], " ", "mp", " ", 
+          RowBox[{"(", 
+           RowBox[{"Ep", "+", "mp"}], ")"}], " ", 
+          SqrtBox["s"]}]]},
        {
-        RowBox[{"-", 
-         FractionBox["1", 
-          RowBox[{"4", " ", "mp"}]]}], "0", 
+        FractionBox["1", 
+         RowBox[{"4", " ", "mp"}]], "0", 
         RowBox[{"-", 
          FractionBox[
           RowBox[{
@@ -839,29 +836,29 @@ Cell[BoxData[
            SqrtBox["s"]}], 
           RowBox[{"4", " ", 
            SuperscriptBox["mp", "2"], " ", "m\[Psi]"}]]}], 
-        FractionBox[
-         RowBox[{"m\[Psi]", 
-          RowBox[{"(", 
-           RowBox[{"Eb", "+", "mb"}], ")"}]}], 
-         RowBox[{"4", " ", 
-          SuperscriptBox["p", "2"], " ", 
-          RowBox[{"(", 
-           RowBox[{"Ep", "+", "mp"}], ")"}], " ", "s"}]], "0", 
         RowBox[{"-", 
          FractionBox[
-          RowBox[{
-           RowBox[{
-            SuperscriptBox["p", "2"], " ", 
-            RowBox[{"(", 
-             RowBox[{"Ep", "+", "mp"}], ")"}]}], "-", 
-           RowBox[{"num", 
-            RowBox[{"(", 
-             RowBox[{"Eb", "+", "mb"}], ")"}]}]}], 
-          RowBox[{"4", " ", 
-           SuperscriptBox["p", "2"], " ", "mp", " ", 
+          RowBox[{"m\[Psi]", 
            RowBox[{"(", 
-            RowBox[{"Ep", "+", "mp"}], ")"}], " ", 
-           SqrtBox["s"]}]]}]}
+            RowBox[{"Eb", "+", "mb"}], ")"}]}], 
+          RowBox[{"4", " ", 
+           SuperscriptBox["p", "2"], " ", 
+           RowBox[{"(", 
+            RowBox[{"Ep", "+", "mp"}], ")"}], " ", "s"}]]}], "0", 
+        FractionBox[
+         RowBox[{
+          RowBox[{
+           SuperscriptBox["p", "2"], " ", 
+           RowBox[{"(", 
+            RowBox[{"Ep", "+", "mp"}], ")"}]}], "-", 
+          RowBox[{"num", 
+           RowBox[{"(", 
+            RowBox[{"Eb", "+", "mb"}], ")"}]}]}], 
+         RowBox[{"4", " ", 
+          SuperscriptBox["p", "2"], " ", "mp", " ", 
+          RowBox[{"(", 
+           RowBox[{"Ep", "+", "mp"}], ")"}], " ", 
+          SqrtBox["s"]}]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -882,7 +879,11 @@ Cell[BoxData[
    3.735159454964053*^9, 3.7351594553836803`*^9}, 3.735226410136796*^9, {
    3.735226497808834*^9, 3.735226544737946*^9}, 3.735226600208613*^9, {
    3.735227122645708*^9, 3.735227122860121*^9}, 3.7352271615464373`*^9, {
-   3.735234970894474*^9, 3.735234971125456*^9}}]
+   3.735234970894474*^9, 3.735234971125456*^9}, 3.74370125489452*^9, 
+   3.743701292019731*^9, {3.74370172919545*^9, 3.743701752913869*^9}, {
+   3.743703080544179*^9, 3.7437030867646437`*^9}, {3.7437031941716433`*^9, 
+   3.743703195359284*^9}, {3.743703232535029*^9, 3.743703233841416*^9}, {
+   3.743703556383009*^9, 3.74370355781318*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -980,9 +981,8 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{"MinvUPC", "=", 
    RowBox[{
-    FractionBox["1", 
-     SqrtBox[
-      RowBox[{"Eb", "+", "mb"}]]], 
+    SqrtBox[
+     RowBox[{"Eb", "+", "mb"}]], 
     TagBox[
      RowBox[{"(", "\[NoBreak]", GridBox[{
         {"0", "0", 
@@ -998,19 +998,20 @@ Cell[BoxData[{
            SuperscriptBox["mb", "2"], " ", 
            SqrtBox[
             RowBox[{"Ep", "+", "mp"}]]}]], "0", "0", 
-         FractionBox[
-          RowBox[{
-           SqrtBox[
-            RowBox[{"Ep", "+", "mp"}]], " ", 
-           RowBox[{"(", 
-            RowBox[{
-             RowBox[{"-", "mp"}], "+", 
-             SqrtBox["u"]}], ")"}]}], 
-          RowBox[{"2", " ", "mb", " ", 
-           RowBox[{"(", 
-            RowBox[{"mb", "+", "mb"}], ")"}], " ", "mp", " ", 
-           SqrtBox[
-            RowBox[{"u", "-", "um"}]]}]]},
+         RowBox[{"-", 
+          FractionBox[
+           RowBox[{
+            SqrtBox[
+             RowBox[{"Ep", "+", "mp"}]], " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "mp"}], "+", 
+              SqrtBox["u"]}], ")"}]}], 
+           RowBox[{"2", " ", "mb", " ", 
+            RowBox[{"(", 
+             RowBox[{"Eb", "+", "mb"}], ")"}], " ", "mp", " ", 
+            SqrtBox[
+             RowBox[{"u", "-", "um"}]]}]]}]},
         {
          RowBox[{"-", 
           FractionBox[
@@ -1042,7 +1043,7 @@ Cell[BoxData[{
              RowBox[{
               RowBox[{
                RowBox[{"(", 
-                RowBox[{"mb", "-", "mb"}], ")"}], 
+                RowBox[{"Eb", "-", "mb"}], ")"}], 
                RowBox[{"(", 
                 RowBox[{"Ep", "+", "mp"}], ")"}], 
                SuperscriptBox["m\[Psi]", "2"]}], "+", 
@@ -1065,7 +1066,7 @@ Cell[BoxData[{
              RowBox[{"Ep", "+", "mp"}]], " ", 
             SqrtBox["u"]}]], "+", 
           FractionBox[
-           RowBox[{"2", "mb", " ", 
+           RowBox[{"2", "Eb", " ", 
             RowBox[{"(", 
              RowBox[{"mp", "+", 
               SqrtBox["u"]}], ")"}], 
@@ -1083,7 +1084,7 @@ Cell[BoxData[{
             RowBox[{"mp", " ", "+", "Ep", " "}]]}], 
           RowBox[{"4", " ", 
            RowBox[{"(", 
-            RowBox[{"mb", "+", "mb"}], ")"}], " ", 
+            RowBox[{"Eb", "+", "mb"}], ")"}], " ", 
            SuperscriptBox["q", "2"], " ", "u", " ", 
            SqrtBox[
             RowBox[{"u", "-", "um"}]]}]], 
@@ -1098,30 +1099,29 @@ Cell[BoxData[{
           RowBox[{"2", " ", 
            SqrtBox["2"], " ", 
            RowBox[{"(", 
-            RowBox[{"mb", "+", "mb"}], ")"}], " ", 
+            RowBox[{"Eb", "+", "mb"}], ")"}], " ", 
            SuperscriptBox["q", "2"], " ", "u", " ", 
            SqrtBox[
             RowBox[{"u", "-", "um"}]]}]], 
          RowBox[{
-          RowBox[{"-", 
-           FractionBox[
-            RowBox[{
-             SqrtBox[
-              RowBox[{"Ep", "+", "mp"}]], " ", 
-             RowBox[{"(", 
-              RowBox[{"E\[Psi]", "+", "mp"}], ")"}], " ", 
-             SuperscriptBox["m\[Psi]", "2"], " ", "num"}], 
-            RowBox[{"4", " ", "mb", " ", 
-             RowBox[{"(", 
-              RowBox[{"mb", "+", "mb"}], ")"}], " ", 
-             SuperscriptBox["q", "2"], " ", "mp", "  ", "u", " ", 
-             SqrtBox[
-              RowBox[{"u", "-", "um"}]]}]]}], "+", 
+          FractionBox[
+           RowBox[{
+            SqrtBox[
+             RowBox[{"Ep", "+", "mp"}]], " ", 
+            RowBox[{"(", 
+             RowBox[{"E\[Psi]", "+", "mp"}], ")"}], " ", 
+            SuperscriptBox["m\[Psi]", "2"], " ", "num"}], 
+           RowBox[{"4", " ", "mb", " ", 
+            RowBox[{"(", 
+             RowBox[{"Eb", "+", "mb"}], ")"}], " ", 
+            SuperscriptBox["q", "2"], " ", "mp", "  ", "u", " ", 
+            SqrtBox[
+             RowBox[{"u", "-", "um"}]]}]], "-", 
           FractionBox[
            RowBox[{"(", 
             RowBox[{
              RowBox[{
-              RowBox[{"-", "mb"}], " ", 
+              RowBox[{"-", "Eb"}], " ", 
               RowBox[{"(", " ", 
                RowBox[{
                 RowBox[{
@@ -1167,7 +1167,7 @@ Cell[BoxData[{
               SqrtBox["u"]}]}], ")"}], 
            RowBox[{"4", " ", "mb", " ", 
             RowBox[{"(", 
-             RowBox[{"mb", "+", "mb"}], ")"}], "  ", "mp", " ", 
+             RowBox[{"Eb", "+", "mb"}], ")"}], "  ", "mp", " ", 
             SqrtBox[
              RowBox[{"Ep", "+", "mp"}]], " ", "u", " ", 
             SqrtBox[
@@ -1180,14 +1180,15 @@ Cell[BoxData[{
            SuperscriptBox["mb", "2"], " ", 
            SqrtBox[
             RowBox[{"Ep", "+", "mp"}]]}]], "0", "0", 
-         FractionBox[
-          SqrtBox[
-           RowBox[{"Ep", "+", "mp"}]], 
-          RowBox[{"2", " ", "mb", " ", "mp", 
-           RowBox[{"(", " ", 
-            RowBox[{"mb", " ", "+", "mb"}], " ", ")"}], " ", 
+         RowBox[{"-", 
+          FractionBox[
            SqrtBox[
-            RowBox[{"u", "-", "um"}]]}]]},
+            RowBox[{"Ep", "+", "mp"}]], 
+           RowBox[{"2", " ", "mb", " ", "mp", 
+            RowBox[{"(", " ", 
+             RowBox[{"Eb", " ", "+", "mb"}], " ", ")"}], " ", 
+            SqrtBox[
+             RowBox[{"u", "-", "um"}]]}]]}]},
         {
          RowBox[{
           FractionBox[
@@ -1210,25 +1211,18 @@ Cell[BoxData[{
            RowBox[{"mp", " ", 
             RowBox[{"(", 
              RowBox[{
-              RowBox[{
-               RowBox[{"(", 
-                RowBox[{
-                 RowBox[{"2", " ", "E\[Psi]"}], "+", 
-                 RowBox[{"5", "mp"}]}], ")"}], 
-               RowBox[{"(", 
-                RowBox[{"Ep", "+", "mp"}], ")"}]}], " ", "+", 
-              RowBox[{"2", 
-               SuperscriptBox["q", "2"]}]}], " ", ")"}], " ", 
+              RowBox[{"2", " ", 
+               SqrtBox["u"]}], "+", 
+              RowBox[{"3", "mp"}]}], " ", ")"}], " ", 
             SqrtBox[
              RowBox[{"u", "-", "um"}]]}], 
            RowBox[{"4", " ", "mb", "  ", 
             SuperscriptBox["u", 
              RowBox[{"3", "/", "2"}]], 
-            SqrtBox[
-             RowBox[{"Ep", "+", "mp"}]], 
             SuperscriptBox[
              RowBox[{"(", 
-              RowBox[{"Ep", "+", "mp"}], ")"}], "2"]}]]}], 
+              RowBox[{"Ep", "+", "mp"}], ")"}], 
+             RowBox[{"3", "/", "2"}]]}]]}], 
          FractionBox[
           RowBox[{"mp", " ", "m\[Psi]", "  ", 
            SqrtBox[
@@ -1251,7 +1245,7 @@ Cell[BoxData[{
                  RowBox[{"E\[Psi]", " ", "mp"}], "+", 
                  SuperscriptBox["m\[Psi]", "2"]}], ")"}], 
                RowBox[{"(", 
-                RowBox[{"mb", "-", "mb"}], ")"}]}], "+", " ", 
+                RowBox[{"Eb", "-", "mb"}], ")"}]}], "+", " ", 
               RowBox[{
                RowBox[{"(", 
                 RowBox[{
@@ -1274,7 +1268,7 @@ Cell[BoxData[{
            RowBox[{
             RowBox[{"(", " ", 
              RowBox[{
-              RowBox[{"mp", "  ", "mb"}], "-", 
+              RowBox[{"mp", "  ", "Eb"}], "-", 
               RowBox[{"mb", 
                RowBox[{"(", 
                 RowBox[{
@@ -1297,7 +1291,7 @@ Cell[BoxData[{
               SuperscriptBox["m\[Psi]", "2"]}], ")"}]}], 
            RowBox[{"4", " ", 
             RowBox[{"(", 
-             RowBox[{"mb", "+", "mb"}], ")"}], 
+             RowBox[{"Eb", "+", "mb"}], ")"}], 
             SuperscriptBox["q", "2"], " ", 
             SuperscriptBox["u", 
              RowBox[{"3", "/", "2"}]], " ", 
@@ -1309,7 +1303,7 @@ Cell[BoxData[{
              SqrtBox["u"]}], "+", "mp"}], 
            RowBox[{"4", " ", 
             RowBox[{"(", 
-             RowBox[{"mb", "+", "mb"}], ")"}], 
+             RowBox[{"Eb", "+", "mb"}], ")"}], 
             SqrtBox[
              RowBox[{"Ep", "+", "mp"}]], " ", 
             SuperscriptBox["u", 
@@ -1323,34 +1317,33 @@ Cell[BoxData[{
           RowBox[{"2", " ", 
            SqrtBox["2"], " ", 
            RowBox[{"(", 
-            RowBox[{"mb", "+", "mb"}], ")"}], " ", 
+            RowBox[{"Eb", "+", "mb"}], ")"}], " ", 
            SuperscriptBox["q", "2"], "  ", "u", " ", 
            SqrtBox[
             RowBox[{"u", "-", "um"}]]}]], 
          RowBox[{
-          RowBox[{"-", 
-           FractionBox[
-            RowBox[{
-             SqrtBox[
-              RowBox[{"Ep", "+", "mp"}]], " ", 
-             RowBox[{"(", 
-              RowBox[{
-               RowBox[{"E\[Psi]", " ", "mp"}], "+", 
-               SuperscriptBox["m\[Psi]", "2"]}], ")"}], " ", "num"}], 
-            RowBox[{"4", " ", "mb", " ", 
-             RowBox[{"(", 
-              RowBox[{"mb", "+", "mb"}], ")"}], "  ", 
-             SuperscriptBox["q", 
-              RowBox[{"2", " "}]], "mp", "  ", "u", " ", 
-             SqrtBox[
-              RowBox[{"u", "-", "um"}]]}]]}], "-", 
+          FractionBox[
+           RowBox[{
+            SqrtBox[
+             RowBox[{"Ep", "+", "mp"}]], " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"E\[Psi]", " ", "mp"}], "+", 
+              SuperscriptBox["m\[Psi]", "2"]}], ")"}], " ", "num"}], 
+           RowBox[{"4", " ", "mb", " ", 
+            RowBox[{"(", 
+             RowBox[{"Eb", "+", "mb"}], ")"}], "  ", 
+            SuperscriptBox["q", 
+             RowBox[{"2", " "}]], "mp", "  ", "u", " ", 
+            SqrtBox[
+             RowBox[{"u", "-", "um"}]]}]], "+", 
           FractionBox[
            RowBox[{
             RowBox[{"(", 
              RowBox[{
               RowBox[{
                RowBox[{"(", 
-                RowBox[{"mb", "+", "mb"}], ")"}], "  ", 
+                RowBox[{"Eb", "+", "mb"}], ")"}], "  ", 
                RowBox[{"(", 
                 RowBox[{
                  RowBox[{"E\[Psi]", " ", "mp"}], "-", 
@@ -1366,12 +1359,12 @@ Cell[BoxData[{
                    RowBox[{"Ep", "+", "E\[Psi]"}], ")"}], " ", "mb"}], "+", 
                  RowBox[{
                   RowBox[{"(", 
-                   RowBox[{"mb", "+", "mb"}], ")"}], " ", "mp"}]}], ")"}]}]}],
+                   RowBox[{"Eb", "+", "mb"}], ")"}], " ", "mp"}]}], ")"}]}]}],
               " ", ")"}], "+", 
             RowBox[{"mp", " ", "num"}]}], 
            RowBox[{"4", " ", "mb", " ", 
             RowBox[{"(", 
-             RowBox[{"mb", "+", "mb"}], ")"}], "  ", "mp", " ", 
+             RowBox[{"Eb", "+", "mb"}], ")"}], "  ", "mp", " ", 
             SqrtBox[
              RowBox[{"Ep", "+", "mp"}]], " ", "u", " ", 
             SqrtBox[
@@ -1412,7 +1405,7 @@ Cell[BoxData[{
            FractionBox[
             RowBox[{
              RowBox[{"(", 
-              RowBox[{"mb", "+", "mb"}], ")"}], " ", "num", " ", 
+              RowBox[{"Eb", "+", "mb"}], ")"}], " ", "num", " ", 
              RowBox[{"(", 
               RowBox[{
                RowBox[{"-", "mp"}], "+", 
@@ -1424,13 +1417,13 @@ Cell[BoxData[{
             RowBox[{"4", " ", 
              SuperscriptBox["mb", "2"], " ", 
              RowBox[{"(", 
-              RowBox[{"mb", "+", "mb"}], ")"}], " ", 
+              RowBox[{"Eb", "+", "mb"}], ")"}], " ", 
              SuperscriptBox["q", "2"]}]]}], "-", 
           FractionBox[
            RowBox[{" ", 
             RowBox[{
              RowBox[{"(", 
-              RowBox[{"mb", "-", "mb"}], ")"}], " ", 
+              RowBox[{"Eb", "-", "mb"}], ")"}], " ", 
              RowBox[{"(", 
               RowBox[{"mp", "+", 
                SqrtBox["u"]}], ")"}], " ", 
@@ -1446,26 +1439,25 @@ Cell[BoxData[{
             SqrtBox["u"]}], 
            RowBox[{"4", " ", 
             RowBox[{"(", 
-             RowBox[{"mb", "+", "mb"}], ")"}], " ", 
+             RowBox[{"Eb", "+", "mb"}], ")"}], " ", 
             SqrtBox[
              RowBox[{"Ep", "+", "mp"}]], " ", 
             SqrtBox["u"], " ", 
             SqrtBox[
              RowBox[{"u", "-", "um"}]]}]]}], "0", 
          RowBox[{
-          RowBox[{"-", 
-           FractionBox[
-            RowBox[{" ", 
-             RowBox[{
-              SqrtBox[
-               RowBox[{"Ep", "+", "mp"}]], " ", 
-              RowBox[{"(", 
-               RowBox[{
-                RowBox[{"-", "mp"}], "+", 
-                SqrtBox["u"]}], ")"}]}]}], 
-            RowBox[{"4", " ", "mb", "  ", "mp", "  ", 
+          FractionBox[
+           RowBox[{" ", 
+            RowBox[{
              SqrtBox[
-              RowBox[{"u", "-", "um"}]]}]]}], "-", 
+              RowBox[{"Ep", "+", "mp"}]], " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "mp"}], "+", 
+               SqrtBox["u"]}], ")"}]}]}], 
+           RowBox[{"4", " ", "mb", "  ", "mp", "  ", 
+            SqrtBox[
+             RowBox[{"u", "-", "um"}]]}]], "+", 
           FractionBox[
            RowBox[{"num", " ", 
             RowBox[{"(", 
@@ -1473,7 +1465,7 @@ Cell[BoxData[{
               SqrtBox["u"]}], ")"}]}], 
            RowBox[{"4", " ", "mb", " ", 
             RowBox[{"(", 
-             RowBox[{"mb", "+", "mb"}], ")"}], " ", "mp", " ", 
+             RowBox[{"Eb", "+", "mb"}], ")"}], " ", "mp", " ", 
             SqrtBox[
              RowBox[{"Ep", "+", "mp"}]], " ", 
             SqrtBox[
@@ -1506,7 +1498,7 @@ Cell[BoxData[{
            RowBox[{" ", 
             RowBox[{
              RowBox[{"(", 
-              RowBox[{"mb", "-", "mb"}], ")"}], " ", 
+              RowBox[{"Eb", "-", "mb"}], ")"}], " ", 
              SqrtBox[
               RowBox[{"u", "-", "um"}]]}]}], 
            RowBox[{"4", " ", 
@@ -1516,7 +1508,7 @@ Cell[BoxData[{
          FractionBox["1", 
           RowBox[{"4", " ", 
            RowBox[{"(", 
-            RowBox[{"mb", "+", "mb"}], ")"}], " ", 
+            RowBox[{"Eb", "+", "mb"}], ")"}], " ", 
            SqrtBox[
             RowBox[{"Ep", "+", "mp"}]], " ", 
            SqrtBox["u"], " ", 
@@ -1524,16 +1516,15 @@ Cell[BoxData[{
             RowBox[{"u", "-", "um"}]]}]], "0", 
          RowBox[{
           FractionBox[
-           RowBox[{"-", 
-            SqrtBox[
-             RowBox[{"Ep", "+", "mp"}]]}], 
+           SqrtBox[
+            RowBox[{"Ep", "+", "mp"}]], 
            RowBox[{"4", " ", "mb", "  ", "mp", "  ", 
             SqrtBox[
-             RowBox[{"u", "-", "um"}]]}]], "+", 
+             RowBox[{"u", "-", "um"}]]}]], "-", 
           FractionBox["num", 
            RowBox[{"4", " ", "mb", " ", 
             RowBox[{"(", 
-             RowBox[{"mb", "+", "mb"}], ")"}], " ", "mp", " ", 
+             RowBox[{"Eb", "+", "mb"}], ")"}], " ", "mp", " ", 
             SqrtBox[
              RowBox[{"Ep", "+", "mp"}]], " ", 
             SqrtBox[
@@ -1564,7 +1555,17 @@ Cell[BoxData[{
    3.7352264163108263`*^9, 3.735226472906554*^9}, {3.735226563227487*^9, 
    3.7352265938381643`*^9}, 3.735226815017825*^9, 3.735227767520483*^9, {
    3.735228703630151*^9, 3.735228704719404*^9}, {3.735234966198908*^9, 
-   3.735234966567008*^9}}]
+   3.735234966567008*^9}, 3.743703908000115*^9, {3.7437042373121147`*^9, 
+   3.74370426633888*^9}, {3.7437044927755833`*^9, 3.74370449342078*^9}, {
+   3.7437045744603167`*^9, 3.7437045749385366`*^9}, {3.743704639001429*^9, 
+   3.743704646168281*^9}, {3.743706262149788*^9, 3.743706281521639*^9}, {
+   3.743706394505886*^9, 3.743706411011322*^9}, {3.7437064938000803`*^9, 
+   3.7437065339908323`*^9}, 3.743708001185295*^9, 3.743708104132519*^9, 
+   3.743708141920988*^9, {3.7437081863088427`*^9, 3.743708191144665*^9}, {
+   3.743709034435464*^9, 3.743709044694886*^9}, 3.743709103708064*^9, 
+   3.7437091945825977`*^9, 3.7437092929493027`*^9, 3.743709322996625*^9, 
+   3.743709418242311*^9, 3.743709467437027*^9, 3.7437095548454323`*^9, 
+   3.743709729952936*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1662,27 +1663,25 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{"MinvUPV", "=", 
    RowBox[{
-    FractionBox["1", 
-     SqrtBox[
-      RowBox[{"Eb", "+", "mb"}]]], 
+    SqrtBox[
+     RowBox[{"Eb", "+", "mb"}]], 
     TagBox[
      TagBox[
       RowBox[{"(", "\[NoBreak]", GridBox[{
          {"0", "0", 
-          RowBox[{"-", 
-           FractionBox[
-            RowBox[{
-             RowBox[{"(", 
-              RowBox[{"mp", "+", 
-               SqrtBox["u"]}], ")"}], " ", 
-             SqrtBox[
-              RowBox[{"u", "-", "um"}]]}], 
-            RowBox[{"2", " ", "mb", " ", 
-             RowBox[{"(", 
-              RowBox[{"Eb", "+", "mb"}], ")"}], " ", 
-             SqrtBox[
-              RowBox[{"Ep", "+", "mp"}]], " ", 
-             SqrtBox["u"]}]]}], "0", "0", 
+          FractionBox[
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"mp", "+", 
+              SqrtBox["u"]}], ")"}], " ", 
+            SqrtBox[
+             RowBox[{"u", "-", "um"}]]}], 
+           RowBox[{"2", " ", "mb", " ", 
+            RowBox[{"(", 
+             RowBox[{"Eb", "+", "mb"}], ")"}], " ", 
+            SqrtBox[
+             RowBox[{"Ep", "+", "mp"}]], " ", 
+            SqrtBox["u"]}]], "0", "0", 
           FractionBox[
            RowBox[{
             SqrtBox[
@@ -1729,35 +1728,36 @@ Cell[BoxData[{
             SuperscriptBox["u", 
              RowBox[{"3", "/", "2"}]]}]], 
           RowBox[{
-           FractionBox[
-            RowBox[{
-             RowBox[{"(", 
-              RowBox[{
-               RowBox[{"Eb", " ", 
-                SuperscriptBox["m\[Psi]", "2"], 
-                RowBox[{"(", 
-                 RowBox[{"Ep", "+", "mp"}], ")"}]}], " ", "+", 
+           RowBox[{"-", 
+            FractionBox[
+             RowBox[{
+              RowBox[{"(", 
                RowBox[{
-                RowBox[{"(", 
-                 RowBox[{"Ep", "+", "mp"}], ")"}], " ", "mb", " ", 
-                SuperscriptBox["m\[Psi]", "2"]}], "+", 
-               RowBox[{"num", 
-                RowBox[{"(", 
-                 RowBox[{
-                  RowBox[{"2", " ", 
-                   RowBox[{"(", 
+                RowBox[{"Eb", " ", 
+                 SuperscriptBox["m\[Psi]", "2"], 
+                 RowBox[{"(", 
+                  RowBox[{"Ep", "+", "mp"}], ")"}]}], " ", "+", 
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{"Ep", "+", "mp"}], ")"}], " ", "mb", " ", 
+                 SuperscriptBox["m\[Psi]", "2"]}], "+", 
+                RowBox[{"num", 
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"2", " ", 
+                    RowBox[{"(", 
                     RowBox[{"Ep", "+", "mp"}], ")"}], " ", "E\[Psi]"}], " ", 
-                  "+", 
-                  SuperscriptBox["m\[Psi]", "2"]}], "  ", ")"}]}]}], ")"}], 
-             " ", 
-             SqrtBox[
-              RowBox[{"u", "-", "um"}]]}], 
-            RowBox[{"4", " ", "mb", " ", 
-             RowBox[{"(", 
-              RowBox[{"Eb", "+", "mb"}], ")"}], " ", 
-             SuperscriptBox["q", "2"], " ", 
-             SqrtBox[
-              RowBox[{"Ep", "+", "mp"}]], "  ", "u"}]], "+", 
+                   "+", 
+                   SuperscriptBox["m\[Psi]", "2"]}], "  ", ")"}]}]}], ")"}], 
+              " ", 
+              SqrtBox[
+               RowBox[{"u", "-", "um"}]]}], 
+             RowBox[{"4", " ", "mb", " ", 
+              RowBox[{"(", 
+               RowBox[{"Eb", "+", "mb"}], ")"}], " ", 
+              SuperscriptBox["q", "2"], " ", 
+              SqrtBox[
+               RowBox[{"Ep", "+", "mp"}]], "  ", "u"}]]}], "-", 
            FractionBox[
             RowBox[{
              RowBox[{"(", 
@@ -1882,34 +1882,33 @@ Cell[BoxData[{
              RowBox[{"Ep", "+", "mp"}]], " ", 
             SuperscriptBox["u", 
              RowBox[{"3", "/", "2"}]]}]], 
-          RowBox[{"-", 
-           FractionBox[
-            RowBox[{
-             RowBox[{"(", 
+          FractionBox[
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{
               RowBox[{
-               RowBox[{
-                SqrtBox["u"], "Ep", " ", "mb"}], "+", 
-               RowBox[{
-                RowBox[{"(", 
-                 RowBox[{"E\[Psi]", "-", "mp"}], ")"}], " ", "mb", " ", 
-                "mp"}], "-", 
-               RowBox[{"num", 
-                RowBox[{"(", 
-                 RowBox[{"E\[Psi]", "-", "mp", "-", "Ep"}], ")"}]}], "-", 
-               RowBox[{"Eb", " ", 
-                RowBox[{"(", 
-                 RowBox[{"Ep", "+", "mp"}], ")"}], " ", 
-                RowBox[{"(", 
-                 RowBox[{"Ep", "-", "mp", "-", "E\[Psi]"}], ")"}]}]}], ")"}], 
-             " ", 
-             SqrtBox[
-              RowBox[{"u", "-", "um"}]]}], 
-            RowBox[{"4", " ", "mb", " ", 
-             RowBox[{"(", 
-              RowBox[{"Eb", "+", "mb"}], ")"}], " ", 
-             SuperscriptBox["q", "2"], " ", 
-             SqrtBox[
-              RowBox[{"Ep", "+", "mp"}]], "  ", "u"}]]}], 
+               SqrtBox["u"], "Ep", " ", "mb"}], "+", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{"E\[Psi]", "-", "mp"}], ")"}], " ", "mb", " ", "mp"}],
+               "-", 
+              RowBox[{"num", 
+               RowBox[{"(", 
+                RowBox[{"E\[Psi]", "-", "mp", "-", "Ep"}], ")"}]}], "-", 
+              RowBox[{"Eb", " ", 
+               RowBox[{"(", 
+                RowBox[{"Ep", "+", "mp"}], ")"}], " ", 
+               RowBox[{"(", 
+                RowBox[{"Ep", "-", "mp", "-", "E\[Psi]"}], ")"}]}]}], ")"}], 
+            " ", 
+            SqrtBox[
+             RowBox[{"u", "-", "um"}]]}], 
+           RowBox[{"4", " ", "mb", " ", 
+            RowBox[{"(", 
+             RowBox[{"Eb", "+", "mb"}], ")"}], " ", 
+            SuperscriptBox["q", "2"], " ", 
+            SqrtBox[
+             RowBox[{"Ep", "+", "mp"}]], "  ", "u"}]], 
           FractionBox[
            RowBox[{
             RowBox[{"(", 
@@ -1980,20 +1979,21 @@ Cell[BoxData[{
              RowBox[{"Eb", "+", "mb"}], ")"}], " ", 
             SuperscriptBox["q", "2"], " ", "u"}]], "0", 
           RowBox[{
-           FractionBox[
-            RowBox[{"num", 
-             RowBox[{"(", 
-              RowBox[{
-               SqrtBox["u"], "-", "mp"}], ")"}], " ", 
-             SqrtBox[
-              RowBox[{"Ep", "+", "mp"}]], 
-             SqrtBox[
-              RowBox[{"u", "-", "um"}]]}], 
-            RowBox[{"4", " ", "mb", " ", 
-             RowBox[{"(", 
-              RowBox[{"Eb", "+", "mb"}], ")"}], " ", 
-             SuperscriptBox["q", "2"], "  ", 
-             SqrtBox["u"]}]], "+", 
+           RowBox[{"-", 
+            FractionBox[
+             RowBox[{"num", 
+              RowBox[{"(", 
+               RowBox[{
+                SqrtBox["u"], "-", "mp"}], ")"}], " ", 
+              SqrtBox[
+               RowBox[{"Ep", "+", "mp"}]], 
+              SqrtBox[
+               RowBox[{"u", "-", "um"}]]}], 
+             RowBox[{"4", " ", "mb", " ", 
+              RowBox[{"(", 
+               RowBox[{"Eb", "+", "mb"}], ")"}], " ", 
+              SuperscriptBox["q", "2"], "  ", 
+              SqrtBox["u"]}]]}], "-", 
            FractionBox[
             RowBox[{" ", 
              RowBox[{
@@ -2049,18 +2049,17 @@ Cell[BoxData[{
              RowBox[{"Eb", "+", "mb"}], ")"}], " ", 
             SuperscriptBox["q", "2"], "  ", "u"}]], "0", 
           RowBox[{
-           RowBox[{"-", 
-            FractionBox[
-             RowBox[{"num", " ", 
-              SqrtBox[
-               RowBox[{"u", "-", "um"}]], 
-              SqrtBox[
-               RowBox[{"Ep", "+", "mp"}]]}], 
-             RowBox[{"4", " ", "mb", " ", 
-              SuperscriptBox["q", "2"], "  ", 
-              SqrtBox["u"], 
-              RowBox[{"(", 
-               RowBox[{"Eb", "+", "mb"}], ")"}]}]]}], "+", 
+           FractionBox[
+            RowBox[{"num", " ", 
+             SqrtBox[
+              RowBox[{"u", "-", "um"}]], 
+             SqrtBox[
+              RowBox[{"Ep", "+", "mp"}]]}], 
+            RowBox[{"4", " ", "mb", " ", 
+             SuperscriptBox["q", "2"], "  ", 
+             SqrtBox["u"], 
+             RowBox[{"(", 
+              RowBox[{"Eb", "+", "mb"}], ")"}]}]], "-", 
            FractionBox[
             RowBox[{" ", 
              SqrtBox[
@@ -2075,24 +2074,23 @@ Cell[BoxData[{
              RowBox[{"Ep", "+", "mp"}]], " ", 
             SqrtBox[
              RowBox[{"u", "-", "um"}]]}]], "0", 
-          FractionBox[
-           RowBox[{
-            RowBox[{"(", 
-             RowBox[{
+          RowBox[{"-", 
+           FractionBox[
+            RowBox[{
+             RowBox[{"(", 
               RowBox[{
-               RowBox[{"-", 
+               RowBox[{
                 RowBox[{"(", 
-                 RowBox[{"Eb", "-", "mb"}], ")"}]}], " ", 
-               RowBox[{"(", 
-                RowBox[{"Ep", "+", "mp"}], ")"}]}], "+", "num"}], ")"}], " ", 
-            
-            SqrtBox["u"]}], 
-           RowBox[{"4", " ", 
-            SuperscriptBox["mb", "2"], " ", "mp", " ", 
-            SqrtBox[
-             RowBox[{"Ep", "+", "mp"}]], " ", 
-            SqrtBox[
-             RowBox[{"u", "-", "um"}]]}]]}
+                 RowBox[{"Eb", "-", "mb"}], ")"}], " ", 
+                RowBox[{"(", 
+                 RowBox[{"Ep", "+", "mp"}], ")"}]}], "-", "num"}], ")"}], " ", 
+             SqrtBox["u"]}], 
+            RowBox[{"4", " ", 
+             SuperscriptBox["mb", "2"], " ", "mp", " ", 
+             SqrtBox[
+              RowBox[{"Ep", "+", "mp"}]], " ", 
+             SqrtBox[
+              RowBox[{"u", "-", "um"}]]}]]}]}
         },
         GridBoxAlignment->{
          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -2125,11 +2123,338 @@ Cell[BoxData[{
    3.735223686935504*^9}, 3.73522661463346*^9, {3.735227746629849*^9, 
    3.735227750089253*^9}, {3.73522784184516*^9, 3.735227846995164*^9}, {
    3.735228694773342*^9, 3.735228698380705*^9}, {3.735234957576929*^9, 
-   3.7352349585529737`*^9}}]
+   3.7352349585529737`*^9}, {3.743703900631104*^9, 3.743703902253956*^9}, {
+   3.743706325900462*^9, 3.743706350523922*^9}, 3.7437080786608152`*^9, {
+   3.743722526888549*^9, 3.743722542932625*^9}, {3.7437227548707943`*^9, 
+   3.743722772051901*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{"(*", "Example", "*)"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"p\[Mu]p", "=", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "2291.164"}], ",", 
+        RowBox[{"-", "1528.241"}], ",", "55768.683", ",", "55836.745"}], 
+       "}"}], "/", "1000"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"p\[Mu]m", "=", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "236.8123"}], ",", 
+        RowBox[{"-", "2036.502"}], ",", "15932.630", ",", "16064.348"}], 
+       "}"}], "/", "1000"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"pKK", "=", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"423.32345", ",", 
+        RowBox[{"-", "880.7687"}], ",", "20447.629", ",", "20476.919"}], 
+       "}"}], "/", "1000"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"pp", "=", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "203.5984"}], ",", 
+        RowBox[{"-", "820.3133"}], ",", "36541.246", ",", "36563.061"}], 
+       "}"}], "/", "1000"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"nums", "=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"s", "\[Rule]", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"pp", "+", "pKK"}], ")"}], ".", 
+         RowBox[{"DiagonalMatrix", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "1"}], ",", 
+            RowBox[{"-", "1"}], ",", 
+            RowBox[{"-", "1"}], ",", "1"}], "}"}], "]"}], ".", 
+         RowBox[{"(", 
+          RowBox[{"pp", "+", "pKK"}], ")"}]}]}], ",", 
+       RowBox[{"u", "\[Rule]", " ", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"p\[Mu]p", "+", "p\[Mu]m", "+", "pp"}], ")"}], ".", 
+         RowBox[{"DiagonalMatrix", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "1"}], ",", 
+            RowBox[{"-", "1"}], ",", 
+            RowBox[{"-", "1"}], ",", "1"}], "}"}], "]"}], ".", 
+         RowBox[{"(", 
+          RowBox[{"p\[Mu]p", "+", "p\[Mu]m", "+", "pp"}], ")"}]}]}], ",", 
+       RowBox[{"mp", "\[Rule]", 
+        SqrtBox[
+         RowBox[{"pp", " ", ".", 
+          RowBox[{"DiagonalMatrix", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "1"}], ",", 
+             RowBox[{"-", "1"}], ",", 
+             RowBox[{"-", "1"}], ",", "1"}], "}"}], "]"}], ".", "pp"}]]}], 
+       ",", 
+       RowBox[{"mK", "\[Rule]", " ", 
+        SqrtBox[
+         RowBox[{"pKK", " ", ".", 
+          RowBox[{"DiagonalMatrix", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "1"}], ",", 
+             RowBox[{"-", "1"}], ",", 
+             RowBox[{"-", "1"}], ",", "1"}], "}"}], "]"}], ".", "pKK"}]]}], 
+       ",", 
+       RowBox[{"m\[Psi]", "\[Rule]", " ", 
+        RowBox[{"\[Sqrt]", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"p\[Mu]p", "+", "p\[Mu]m"}], ")"}], " ", ".", 
+           RowBox[{"DiagonalMatrix", "[", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"-", "1"}], ",", 
+              RowBox[{"-", "1"}], ",", 
+              RowBox[{"-", "1"}], ",", "1"}], "}"}], "]"}], ".", 
+           RowBox[{"(", 
+            RowBox[{"p\[Mu]p", "+", "p\[Mu]m"}], ")"}]}], ")"}]}]}], ",", 
+       RowBox[{"mb", "\[Rule]", " ", 
+        RowBox[{"\[Sqrt]", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"p\[Mu]p", "+", "p\[Mu]m", "+", "pKK", "+", "pp"}], ")"}],
+            " ", ".", 
+           RowBox[{"DiagonalMatrix", "[", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"-", "1"}], ",", 
+              RowBox[{"-", "1"}], ",", 
+              RowBox[{"-", "1"}], ",", "1"}], "}"}], "]"}], ".", 
+           RowBox[{"(", 
+            RowBox[{"p\[Mu]p", "+", "p\[Mu]m", "+", "pKK", "+", "pp"}], 
+            ")"}]}], ")"}]}]}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"MinvSPC", "//.", "sostS"}], "//.", "nums"}], "//", 
+    "MatrixForm"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"MinvSPV", "//.", "sostS"}], "//.", "nums"}], "//", 
+    "MatrixForm"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"MinvUPC", "//.", "sostU"}], "//.", "nums"}], "//", 
+    "MatrixForm"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"MinvUPV", "//.", "sostU"}], "//.", "nums"}], "//", 
+    "MatrixForm"}]}]}]], "Input",
+ CellChangeTimes->{{3.743723018818904*^9, 3.743723277378566*^9}, {
+   3.743723330413849*^9, 3.7437234150161867`*^9}, 3.743723509123413*^9, {
+   3.743723737670619*^9, 3.743723743439084*^9}, {3.743723817533161*^9, 
+   3.7437238331526814`*^9}, 3.7437243741258373`*^9, {3.743724786691042*^9, 
+   3.7437247922134743`*^9}, 3.743724983267893*^9, {3.7437252418979893`*^9, 
+   3.7437252526367273`*^9}, {3.743726291297512*^9, 3.74372629995583*^9}, 
+   3.743731283322988*^9, {3.743732409763726*^9, 3.743732469226541*^9}, 
+   3.743732499732376*^9}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      RowBox[{"-", "0.04864667641304148`"}], "0.16257103363876102`", 
+      "0.9183290179648134`", "0.09657334086203967`", "0.17291112763485744`", 
+      RowBox[{"-", "0.7830793984299708`"}]},
+     {"0", "0", 
+      RowBox[{"-", "1.6236612804288506`"}], "0", "0", "1.7269318931676605`"},
+     {
+      RowBox[{"-", "0.037119321650549104`"}], "0.022214678575745186`", 
+      "0.1282287322768624`", "0.03948024208235783`", "0.044100561115845385`", 
+      
+      RowBox[{"-", "0.10679046506913671`"}]},
+     {"0", "0", 
+      RowBox[{"-", "0.2218667904932973`"}], "0", "0", "0.440449764796919`"},
+     {
+      RowBox[{"-", "0.43717185538896886`"}], "0", 
+      RowBox[{"-", "0.02218982266875065`"}], "0.2130405385294131`", "0", 
+      "1.655620559656856`"},
+     {"0.1114996148045602`", "0", "0.015121968081537372`", 
+      RowBox[{"-", "0.02911113364482043`"}], "0", 
+      RowBox[{"-", "0.42815353661813815`"}]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.743723199572486*^9, 3.7437232087702427`*^9}, 
+   3.743723287057221*^9, {3.7437233332969837`*^9, 3.743723416554348*^9}, 
+   3.743723509911706*^9, 3.743723745045361*^9, {3.74372382504193*^9, 
+   3.74372383352733*^9}, 3.743724375368474*^9, 3.743724794063754*^9, 
+   3.743724984395855*^9, {3.7437252460340643`*^9, 3.743725253257427*^9}, 
+   3.743726300477865*^9, 3.743731285104294*^9, 3.743732471267454*^9}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      RowBox[{"-", "0.3453039173267206`"}], 
+      RowBox[{"-", "0.6182543669788892`"}], "3.4446542182844584`", 
+      "0.01360532512753645`", 
+      RowBox[{"-", "0.045467274068122114`"}], 
+      RowBox[{"-", "0.44998159388496517`"}]},
+     {"0", "0", 
+      RowBox[{"-", "6.174751151242802`"}], "0", "0", 
+      RowBox[{"-", "0.4540996681800961`"}]},
+     {
+      RowBox[{"-", "0.14116403270671185`"}], 
+      RowBox[{"-", "0.15768426745598496`"}], "0.8737715930282695`", 
+      "0.010381396568213129`", 
+      RowBox[{"-", "0.006212920324926985`"}], 
+      RowBox[{"-", "0.11482302857588612`"}]},
+     {"0", "0", 
+      RowBox[{"-", "1.574855211722212`"}], "0", "0", 
+      RowBox[{"-", "0.062050895194457424`"}]},
+     {
+      RowBox[{"-", "0.7617395426828023`"}], "0", 
+      RowBox[{"-", "0.126012813297912`"}], "0.12226663089322032`", "0", 
+      RowBox[{"-", "0.4198751083433601`"}]},
+     {"0.10408864802283574`", "0", "0.0532048718733245`", 
+      RowBox[{"-", "0.031183805819146048`"}], "0", "0.05399301038068603`"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.743723199572486*^9, 3.7437232087702427`*^9}, 
+   3.743723287057221*^9, {3.7437233332969837`*^9, 3.743723416554348*^9}, 
+   3.743723509911706*^9, 3.743723745045361*^9, {3.74372382504193*^9, 
+   3.74372383352733*^9}, 3.743724375368474*^9, 3.743724794063754*^9, 
+   3.743724984395855*^9, {3.7437252460340643`*^9, 3.743725253257427*^9}, 
+   3.743726300477865*^9, 3.743731285104294*^9, 3.743732471269438*^9}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"0", "0", 
+      RowBox[{"-", "0.7962218287176734`"}], "0", "0", 
+      RowBox[{"-", "0.038563254982189564`"}]},
+     {
+      RowBox[{"-", "0.17220308625301375`"}], 
+      RowBox[{"-", "0.43697391716702266`"}], "1.26165482866496`", 
+      "0.012593082188612595`", "0.021163871650463375`", 
+      "0.11093789407790622`"},
+     {"0", "0", "0.14328685656454335`", "0", "0", 
+      RowBox[{"-", "0.010478460058573192`"}]},
+     {"0.09977285018845951`", "0.07863715453819739`", 
+      RowBox[{"-", "0.17486755604982393`"}], "0.004832278798879355`", 
+      "0.0057506759705987474`", 
+      RowBox[{"-", "0.016084499765990374`"}]},
+     {
+      RowBox[{"-", "0.7033279712331403`"}], "0", 
+      RowBox[{"-", "0.4017484104052825`"}], 
+      RowBox[{"-", "0.014422402648861667`"}], "0", "0.2258574000998431`"},
+     {
+      RowBox[{"-", "0.1911092323002172`"}], "0", 
+      RowBox[{"-", "0.09440338051337534`"}], "0.002595433414569561`", "0", 
+      "0.05795191034013266`"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.743723199572486*^9, 3.7437232087702427`*^9}, 
+   3.743723287057221*^9, {3.7437233332969837`*^9, 3.743723416554348*^9}, 
+   3.743723509911706*^9, 3.743723745045361*^9, {3.74372382504193*^9, 
+   3.74372383352733*^9}, 3.743724375368474*^9, 3.743724794063754*^9, 
+   3.743724984395855*^9, {3.7437252460340643`*^9, 3.743725253257427*^9}, 
+   3.743726300477865*^9, 3.743731285104294*^9, 3.743732471271099*^9}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"0", "0", "0.08557346259805185`", "0", "0", "0.3588134039573612`"},
+     {
+      RowBox[{"-", "0.018507423219574277`"}], 
+      RowBox[{"-", "0.04696350917336562`"}], 
+      RowBox[{"-", "0.5554820865450636`"}], "0.11717285505328327`", 
+      "0.1969201207555403`", 
+      RowBox[{"-", "0.5385410690220093`"}]},
+     {"0", "0", 
+      RowBox[{"-", "0.015399668809338941`"}], "0", "0", 
+      RowBox[{"-", "0.09749726581909038`"}]},
+     {
+      RowBox[{"-", "0.010723027121290543`"}], 
+      RowBox[{"-", "0.00845148093155046`"}], "0.14232710313427446`", 
+      RowBox[{"-", "0.0449621383230665`"}], 
+      RowBox[{"-", "0.053507402863667224`"}], "0.136377650552531`"},
+     {"0.0755897510840836`", "0", 
+      RowBox[{"-", "0.5240585179510604`"}], "0.13419384307864488`", "0", 
+      "0.08514436141749204`"},
+     {
+      RowBox[{"-", "0.0205393499054443`"}], "0", 
+      RowBox[{"-", "0.0763926319058978`"}], "0.024149317754854748`", "0", 
+      "0.008670818103834238`"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.743723199572486*^9, 3.7437232087702427`*^9}, 
+   3.743723287057221*^9, {3.7437233332969837`*^9, 3.743723416554348*^9}, 
+   3.743723509911706*^9, 3.743723745045361*^9, {3.74372382504193*^9, 
+   3.74372383352733*^9}, 3.743724375368474*^9, 3.743724794063754*^9, 
+   3.743724984395855*^9, {3.7437252460340643`*^9, 3.743725253257427*^9}, 
+   3.743726300477865*^9, 3.743731285104294*^9, 3.7437324712729597`*^9}]
+}, Open  ]]
 }, Open  ]]
 },
-WindowSize->{1855, 1056},
-WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowSize->{1185, 1315},
+WindowMargins->{{Automatic, 167}, {Automatic, 3}},
+Magnification:>FEPrivate`If[
+  FEPrivate`Equal[FEPrivate`$VersionNumber, 6.], 2., 2. Inherited],
 FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 6, \
 2010)",
 StyleDefinitions->FrontEnd`FileName[{"Report"}, "StandardReport.nb", 
@@ -2147,20 +2472,27 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 159, 2, 38, "Subtitle"],
-Cell[742, 26, 14292, 413, 289, "Input"]
+Cell[580, 22, 159, 2, 52, "Subtitle"],
+Cell[742, 26, 14328, 413, 840, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[15071, 444, 211, 3, 38, "Subtitle"],
-Cell[15285, 449, 14682, 435, 293, "Input"]
+Cell[15107, 444, 211, 3, 52, "Subtitle"],
+Cell[15321, 449, 14834, 436, 849, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[30004, 889, 233, 3, 38, "Subtitle"],
-Cell[30240, 894, 23742, 672, 297, "Input"]
+Cell[30192, 890, 233, 3, 52, "Subtitle"],
+Cell[30428, 895, 24111, 672, 856, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[54019, 1571, 254, 3, 38, "Subtitle"],
-Cell[54276, 1576, 19445, 551, 296, "Input"]
+Cell[54576, 1572, 254, 3, 52, "Subtitle"],
+Cell[54833, 1577, 19603, 551, 850, "Input"],
+Cell[CellGroupData[{
+Cell[74461, 2132, 5038, 137, 714, "Input"],
+Cell[79502, 2271, 1895, 41, 251, "Output"],
+Cell[81400, 2314, 2012, 45, 251, "Output"],
+Cell[83415, 2361, 1949, 43, 251, "Output"],
+Cell[85367, 2406, 1959, 43, 249, "Output"]
+}, Open  ]]
 }, Open  ]]
 }
 ]
