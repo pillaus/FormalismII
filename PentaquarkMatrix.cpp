@@ -6,6 +6,7 @@
     @version 1.0 2018-05-13
 */
 #include "PentaquarkMatrix.h"
+#include <cstdio>
   /**
       Constructor. It gets the masses as optional input. Default from LivePDG, 2018-05-13
 
@@ -131,8 +132,8 @@ cd PentaquarkMatrix::Evaluate()
       {
 
         fact = over4PI * (j + 1) * pow(ps*qs, (lambda == -1) ? (j - 3)/2 : (j - 1)/2 )
-                    * SpecialFunc::ClebschGordan(1,1,2, -2*lambda,S, 1 - 2*lambda) * SpecialFunc::ClebschGordan(S, 1 - 2*lambda, L, 0, j, 1 - 2*lambda);
-
+                    * SpecialFunc::ClebschGordan(1,1,2, -2*lambda,S, 1 - 2*lambda) * SpecialFunc::ClebschGordan(S, 1 - 2*lambda, 2*L, 0, j, 1 - 2*lambda);
+// printf("fact =  %lf\n", fact);
         if (lambda == -1)
         {
           fact *=  mpsi*mp/rs*eta;
@@ -163,7 +164,8 @@ cd PentaquarkMatrix::Evaluate()
         if (2*L - j + 2 + eta*PC > 0) fact *= ps2;
 
 //        fact *= sqrt((Eb_s + mb)/(Ep_s + mp));
-        cd cfact = Isobars->at(n).Evaluate(s) * fact;
+        cd cfact = fact; //Isobars->at(n).Evaluate(s) * fact;
+        printf("lambda = %d, fact %lf valP %lff valM %lf\n", lambda, fact, valP, valM);
         FF[PC ? 0 : 1][kl  ] += cfact*valP;
         FF[PC ? 0 : 1][kl+3] += cfact*valM;
 
@@ -199,13 +201,15 @@ cd PentaquarkMatrix::Evaluate()
           if (2*L - j + 2 + eta > 0) fact *= qu2;
 
 //          fact *= sqrt((Eb_s + mb));
-          cd cfact = Isobars->at(n).Evaluate(u) * fact;
+          cd cfact = fact; //Isobars->at(n).Evaluate(u) * fact;
           FF[PC ? 2 : 3][kl  ] += cfact*valP;
           FF[PC ? 2 : 3][kl+3] += cfact*valM;
 
         }
       }
     }
+
+    for (int i = 0; i<2; i++) for (int j=0;j<3;j++) printf("lambda = %d, etabar = %d, fact = %lf\n", 1 - j, 2*i + 1, real(FF[0][i*3+j]));
     cd CC[4][6] = {};
     for (int i =0; i < 4; i++) for (int j =0; j < 6; j++) for (int k =0; k < 6; k++) CC[i][j] += Matrices[i][j][k]*FF[i][k];
 
