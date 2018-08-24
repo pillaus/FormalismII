@@ -70,16 +70,16 @@ void PentaquarkMatrix::slash(double p[4], double m, cd ret[4][4])
 {
   double ppsi[4], pb[4];
   for (int mu =0; mu < 4; mu++) { ppsi[mu] = pmu_p[mu] + pmu_m[mu]; pb[mu] = ppsi[mu] + pp[mu] + pK[mu]; }
-  // for (int mu =0; mu < 4; mu++) for (int nu =0; nu < 4; nu++)
-  // {
-  //   lepton[mu][nu] = pmu_p[mu]*pmu_m[nu] + pmu_p[nu]*pmu_m[mu];
-  //   lepton[mu][nu] -= (mu == nu) ? metric[mu]*mpsi2/2. : 0.;
-  // }
   for (int mu =0; mu < 4; mu++) for (int nu =0; nu < 4; nu++)
   {
-    lepton[mu][nu]  = ppsi[mu]*ppsi[nu]/mpsi2;
-    lepton[mu][nu] -= (mu == nu) ? metric[mu] : 0.;
+    lepton[mu][nu] = pmu_p[mu]*pmu_m[nu] + pmu_p[nu]*pmu_m[mu];
+    lepton[mu][nu] -= (mu == nu) ? metric[mu]*mpsi2/2. : 0.;
   }
+  // for (int mu =0; mu < 4; mu++) for (int nu =0; nu < 4; nu++)
+  // {
+  //   lepton[mu][nu]  = ppsi[mu]*ppsi[nu]/mpsi2;
+  //   lepton[mu][nu] -= (mu == nu) ? metric[mu] : 0.;
+  // }
           // To add muons
 
   cd ppsislash[4][4];
@@ -100,14 +100,17 @@ void PentaquarkMatrix::slash(double p[4], double m, cd ret[4][4])
     Structures[3][mu][i][j] = ppsislash[PentaquarkMatrix::g5(i)][j] * pp[mu];
     Structures[4][mu][i][j] = gamma[mu][PentaquarkMatrix::g5(i)][j];
     Structures[5][mu][i][j] = 0.;
-    for (int k = 0; k < 4; k++) Structures[5][mu][i][j] += gamma[mu][PentaquarkMatrix::g5(i)][k]*ppsislash[k][j];
+    for (int k = 0; k < 4; k++) Structures[5][mu][i][j] += ppsislash[PentaquarkMatrix::g5(i)][k]*gamma[mu][k][j];
   }
 
   for (int k =0; k < 4; k++) for (int i =0; i < 6; i++) for (int j =0; j < 6; j++)  Matrices[k][i][j] = PentaquarkMatrix::GetMatrix(k,i,j);
+
+  // for (int i =0; i < 4; i++) std::cout << pb[i] << " "; std::cout << std::endl;
+
   return;
 }
 
-cd PentaquarkMatrix::Evaluate()
+double PentaquarkMatrix::Evaluate()
 {
   cd FF[4][6] = {}; // First index is channel and PC/PV. second index the 6 guys
 
@@ -122,18 +125,20 @@ cd PentaquarkMatrix::Evaluate()
     int L = Isobars->at(n).L();
     int PC = Isobars->at(n).PC()  ?1:-1;
     int eta  = Isobars->at(n).Eta() ?1:-1;
-    double valP = 1., valM = 1., fact;
+
     // fact are the common values for both etabars. varP is for etabar +, varM for etabar -
     int lambdamin = (j == 1) ? 0 : -1;
     for (int lambda = 1; lambda >= lambdamin; lambda--)
     {
+      double valP = 1., valM = 1., fact;
       int kl = 1 - lambda;
       if (Isobars->at(n).Channel() == 's' )
       {
 
         fact = over4PI * (j + 1) * pow(ps*qs, (lambda == -1) ? (j - 3)/2 : (j - 1)/2 )
                     * SpecialFunc::ClebschGordan(1,1,2, -2*lambda,S, 1 - 2*lambda) * SpecialFunc::ClebschGordan(S, 1 - 2*lambda, 2*L, 0, j, 1 - 2*lambda);
-// printf("fact =  %lf\n", fact);
+
+ // printf("fact =  %lf\n", fact);
         if (lambda == -1)
         {
           fact *=  mpsi*mp/rs*eta;
@@ -143,29 +148,31 @@ cd PentaquarkMatrix::Evaluate()
         {
           fact *= Epsi_s / mpsi;
         }
+ // printf("fact =  %lf\n", fact);
         if (eta > 0)
         {
           // eta = +, etabar = +
-          valP *= SpecialFunc::WignerDhat(j, 1, 1 - 2*lambda, true, costheta_s);
+          valP *= SpecialFunc::WignerDhat(j, 1 - 2*lambda, 1, true, costheta_s);
+          // printf("WignerDhat %lf\n", SpecialFunc::WignerDhat(j, 1 - 2*lambda, 1, true, costheta_s));
           if (j == 1 && PC > 0) valP *= ps2*s/mpsi2;
           // eta = +, etabar = -
-          valM *= SpecialFunc::WignerDhat(j, 1, 1 - 2*lambda, false, costheta_s);
+          valM *= SpecialFunc::WignerDhat(j, 1 - 2*lambda, 1, false, costheta_s);
           valM /= (PC > 0) ? ps*mp/qs/mpsi :  mpsi*mp/s/ps/qs;
         }
         else
         {
           // eta = -, etabar = -
-          valM *= SpecialFunc::WignerDhat(j, 1, 1 - 2*lambda, true, costheta_s);
+          valM *= SpecialFunc::WignerDhat(j, 1 - 2*lambda, 1, true, costheta_s);
           if (j == 1 && PC < 0) valM *= ps2*s/mpsi2;
           // eta = -, etabar = +
-          valP *= SpecialFunc::WignerDhat(j, 1, 1 - 2*lambda, false, costheta_s);
+          valP *= SpecialFunc::WignerDhat(j, 1 - 2*lambda, 1, false, costheta_s);
           valP *= (PC > 0) ? ps*mp/qs/mpsi :  mpsi*mp/s/ps/qs;
         }
         if (2*L - j + 2 + eta*PC > 0) fact *= ps2;
 
 //        fact *= sqrt((Eb_s + mb)/(Ep_s + mp));
-        cd cfact = fact; //Isobars->at(n).Evaluate(s) * fact;
-        printf("lambda = %d, fact %lf valP %lff valM %lf\n", lambda, fact, valP, valM);
+        cd cfact = Isobars->at(n).Evaluate(s) * fact;
+        // printf("lambda = %d, fact %lf valP %lf valM %lf\n", lambda, fact, valP, valM);
         FF[PC ? 0 : 1][kl  ] += cfact*valP;
         FF[PC ? 0 : 1][kl+3] += cfact*valM;
 
@@ -185,6 +192,7 @@ cd PentaquarkMatrix::Evaluate()
             fact *= (Ep_u + mp)/2./mp;
             // eta = +, etabar = +
             valP *= SpecialFunc::WignerDhat(j, 1, 1 - 2*lambda, true, costheta_u);
+
             if (j == 1) valP *= qu2*u/mp2;
             // eta = +, etabar = -
             valM *= SpecialFunc::WignerDhat(j, 1, 1 - 2*lambda, false, costheta_u);
@@ -201,7 +209,7 @@ cd PentaquarkMatrix::Evaluate()
           if (2*L - j + 2 + eta > 0) fact *= qu2;
 
 //          fact *= sqrt((Eb_s + mb));
-          cd cfact = fact; //Isobars->at(n).Evaluate(u) * fact;
+          cd cfact = Isobars->at(n).Evaluate(u) * fact;
           FF[PC ? 2 : 3][kl  ] += cfact*valP;
           FF[PC ? 2 : 3][kl+3] += cfact*valM;
 
@@ -209,10 +217,11 @@ cd PentaquarkMatrix::Evaluate()
       }
     }
 
-    for (int i = 0; i<2; i++) for (int j=0;j<3;j++) printf("lambda = %d, etabar = %d, fact = %lf\n", 1 - j, 2*i + 1, real(FF[0][i*3+j]));
+    // for (int i = 0; i<2; i++) for (int j=0;j<3;j++) printf("lambda = %d, etabar = %d, fact = %lf\n", 1 - j, 2*i + 1, real(FF[0][i*3+j]));
     cd CC[4][6] = {};
     for (int i =0; i < 4; i++) for (int j =0; j < 6; j++) for (int k =0; k < 6; k++) CC[i][j] += Matrices[i][j][k]*FF[i][k];
 
+    // for (int j =0; j < 6; j++) printf("CC[0][%d] %lf %lf\n", j, real(CC[0][j]),imag(CC[0][j]));
     cd CM[4][4][4] = {};
     for (int i =0; i < 4; i++) for (int j =0; j < 4; j++) for (int mu =0; mu < 4; mu++) for (int k = 0; k < 6 ; k++)
     {
@@ -222,15 +231,46 @@ cd PentaquarkMatrix::Evaluate()
       CM[mu][i][j] += Structures[k][mu][g5(i)][j] * (CC[1][k] + CC[3][k]);
     }
 
+    // std::cout << "CM" << std::endl;
+    // for (int mu=0; mu< 4 ; mu++) {
+    // for (int i =0; i < 4; i++) { for (int j =0; j < 4; j++) std::cout << CM[mu][i][j] << " "; std::cout << std::endl; }
+    // std::cout << std::endl; }
+    //
+    //     for (int mu=0; mu< 4 ; mu++) {
+    // for (int i =0; i < 4; i++) { for (int j =0; j < 4; j++) std::cout << std::conj(CM[mu][j][i]) * g0fy(i,j)  << " "; std::cout << std::endl; }
+    //
+    // std::cout << std::endl; }
+    // for (int i =0; i < 4; i++) std::cout << pb[i] << " "; std::cout << std::endl;
+
     cd ret = 0.;
 
-    for (int i =0; i < 4; i++) for (int j =0; j < 4; j++) for (int k =0; k < 4; k++) for (int l =0; l < 4; l++) for (int mu =0; mu < 4; mu++) for (int nu =0; nu < 4; nu++)
+     for (int mu =0; mu < 4; mu++) for (int nu =0; nu < 4; nu++) for (int i =0; i < 4; i++) for (int j =0; j < 4; j++) for (int k =0; k < 4; k++) for (int l =0; l < 4; l++)
     {
-      ret += pbm[i][j] * CM[mu][j][k] * pbm[k][l] * std::conj(CM[nu][i][l]) * g0fy(l,i) *lepton[mu][nu];
+      ret += pbm[i][j] * CM[mu][j][k] * ppm[k][l] * std::conj(CM[nu][i][l]) * g0fy(l,i) * lepton[mu][nu] * metric[mu] * metric[nu];
     }
 
+    //     std::cout << "leptons" << std::endl;
+    // for (int i =0; i < 4; i++) { for (int j =0; j < 4; j++) std::cout << lepton[i][j] << " "; std::cout << std::endl; }
+    // std::cout << std::endl;
 
-
+// std::cout << "boh" << std::endl;
+// for (int mu =0; mu < 4; mu++)
+// {
+//   for (int nu =0; nu < 4; nu++)
+//   {
+//     cd boh = 0.;
+//
+//     for (int i =0; i < 4; i++) for (int j =0; j < 4; j++) for (int k =0; k < 4; k++) for (int l =0; l < 4; l++)
+//     {
+//       boh += pbm[i][j] * CM[mu][j][k] * ppm[k][l] * std::conj(CM[nu][i][l]) * g0fy(l,i);
+//     }
+//     std::cout <<  boh  << " ";
+//
+//   }
+//   std::cout << std::endl;
+// }
+//
+//   for (int i =0; i < 4; i++) { for (int j =0; j < 4; j++) std::cout <<  lepton[i][j]  << " "; std::cout << std::endl; }
 
 
 
@@ -241,7 +281,7 @@ cd PentaquarkMatrix::Evaluate()
 
 
 
-  return ret;
+  return std::real(ret);
 }
 /**
     Sets the kinematics and check whether it falls in the Dalitz (optional)

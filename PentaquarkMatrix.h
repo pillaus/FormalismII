@@ -48,7 +48,7 @@ public:
 
   void SetIsobars(std::vector<Isobar> *_Isobars) { Isobars = _Isobars; }
 
-  cd Evaluate();
+  double Evaluate();
 
   double GetPCschannel(int i, int j);
   double GetPVschannel(int i, int j);

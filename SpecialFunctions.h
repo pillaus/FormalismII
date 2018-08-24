@@ -73,14 +73,16 @@ inline double WignerDhat(uint j, int m1, int m2, bool eta, double z) {
         int M = (am1 > am2) ? am1 : am2;
         double factor = (m2 - M) % 4 == 0 ? 1.0 : -1.0;
         if (!eta) factor = -factor;
+        // std::cout << WignerDhat(j, m1, m2, z) << std::endl;
         return WignerDhat(j, m1, m2, z) + factor*WignerDhat(j, -m1, m2, z);
+
 }
 
 // j, m1, m2 are doubled
 inline double WignerD(uint j, int m1, int m2, double z) {
         double hat = WignerDhat(j, m1, m2, z);
         double xi = pow(sqrt(1-z),abs(m1-m2)/2)*pow(sqrt((1+z)),abs(m1+m2)/2);
-        std::cout << "hat " << hat << " xi " << xi << std::endl;
+        // std::cout << "hat " << hat << " xi " << xi << std::endl;
         return hat*xi;
 }
 
