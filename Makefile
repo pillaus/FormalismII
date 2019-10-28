@@ -60,4 +60,4 @@ LDFLAGS := -Xlinker -rpath . $(shell root-config --glibs) $(STDLIBDIR)
 #pentaquarkMatrix.cpp Isobar.cpp main.cpp pentaquarkMatrix.h Isobar.h
 
 main : Isobar.cpp Isobar.h main.cpp PentaquarkMatrix.cpp PentaquarkMatrix.h SpecialFunctions.h
-	g++ -o main Isobar.cpp main.cpp  PentaquarkMatrix.cpp  $(LDFLAGS) -I/usr/include/gsl/  -lgsl -lgslcblas -lm $(CPPFLAGS)
+	g++ -o main Isobar.cpp main.cpp  PentaquarkMatrix.cpp  $(LDFLAGS) -I/usr/include/gsl/  -lgsl -lgslcblas -lm $(CPPFLAGS) -std=gnu++11
