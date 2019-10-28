@@ -66,7 +66,7 @@ int main (int argc, char **argv)
 
   PentaquarkMatrix *p = new PentaquarkMatrix(mb, mpsi, mp, mK);
 
-//   Isobar(double mass, double width, cd coupling unsigned int j, unsigned int spin, unsigned int L, bool eta, char channel)
+//   Isobar(double mass, double width, cd coupling, unsigned int j, unsigned int spin, unsigned int L, bool eta, char channel)
   std::vector<Isobar> *Isobars = new std::vector<Isobar>();
 
  //Isobar iso; 1.519
@@ -108,6 +108,12 @@ int main (int argc, char **argv)
      ss = tpLambdastar.M2();
      tt = tpPc.M2();
 
+     // printf("s: %.10lf ; t: %.10lf\n", ss, tt);
+     //
+     // printf("ppsi : %lf %lf %lf %lf\n", tpPsi->E(), tpPsi->Px(), tpPsi->Py(), tpPsi->Pz());
+     // printf("pp   : %lf %lf %lf %lf\n", tpP->E(),   tpP->Px(),   tpP->Py(),   tpP->Pz());
+     // printf("pK   : %lf %lf %lf %lf\n", tpK->E(),   tpK->Px(),   tpK->Py(),   tpK->Pz());
+
 
      // printf("%lf %lf %lf %lf\n", pmu_p[0], pmu_p[1], pmu_p[2], pmu_p[3]);
      // break;
@@ -135,9 +141,13 @@ int main (int argc, char **argv)
     p->SetKinematics(pmu_p, pmu_m, pK, pp);
     // std::cout << weight << " " << p->Evaluate() << std::endl;
 
-    std::complex<double> iso = Isobars->at(0).Evaluate(ss);
+
+    // p->Print();
+    //std::complex<double> iso = Isobars->at(0).Evaluate(ss);
     // std::cout << abs(iso)*abs(iso) << std::endl;
-    weight *= p->Evaluate();
+    double w =p->Evaluate();
+    // printf("Mod square : %lf\n", w);
+    weight *= w;
 
     // std::cout << weight << std::endl;
 

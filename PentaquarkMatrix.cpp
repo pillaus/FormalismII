@@ -70,16 +70,16 @@ void PentaquarkMatrix::slash(double p[4], double m, cd ret[4][4])
 {
   double ppsi[4], pb[4];
   for (int mu =0; mu < 4; mu++) { ppsi[mu] = pmu_p[mu] + pmu_m[mu]; pb[mu] = ppsi[mu] + pp[mu] + pK[mu]; }
-  for (int mu =0; mu < 4; mu++) for (int nu =0; nu < 4; nu++)
-  {
-    lepton[mu][nu] = pmu_p[mu]*pmu_m[nu] + pmu_p[nu]*pmu_m[mu];
-    lepton[mu][nu] -= (mu == nu) ? metric[mu]*mpsi2/2. : 0.;
-  }
   // for (int mu =0; mu < 4; mu++) for (int nu =0; nu < 4; nu++)
   // {
-  //   lepton[mu][nu]  = ppsi[mu]*ppsi[nu]/mpsi2;
-  //   lepton[mu][nu] -= (mu == nu) ? metric[mu] : 0.;
+  //   lepton[mu][nu] = pmu_p[mu]*pmu_m[nu] + pmu_p[nu]*pmu_m[mu];
+  //   lepton[mu][nu] -= (mu == nu) ? metric[mu]*mpsi2/2. : 0.;
   // }
+  for (int mu =0; mu < 4; mu++) for (int nu =0; nu < 4; nu++)
+  {
+    lepton[mu][nu]  = ppsi[mu]*ppsi[nu]/mpsi2;
+    lepton[mu][nu] -= (mu == nu) ? metric[mu] : 0.;
+  }
           // To add muons
 
   cd ppsislash[4][4];
@@ -96,11 +96,11 @@ void PentaquarkMatrix::slash(double p[4], double m, cd ret[4][4])
   {
     Structures[0][mu][i][j] = gamma[5][i][j] * pb[mu];
     Structures[1][mu][i][j] = gamma[5][i][j] * pp[mu];
-    Structures[2][mu][i][j] = ppsislash[PentaquarkMatrix::g5(i)][j] * pb[mu]; // left multiplication of gamma5 is the swapping of the rows
-    Structures[3][mu][i][j] = ppsislash[PentaquarkMatrix::g5(i)][j] * pp[mu];
+    Structures[2][mu][i][j] = -ppsislash[PentaquarkMatrix::g5(i)][j] * pb[mu]; // left multiplication of gamma5 is the swapping of the rows
+    Structures[3][mu][i][j] = -ppsislash[PentaquarkMatrix::g5(i)][j] * pp[mu];
     Structures[4][mu][i][j] = gamma[mu][PentaquarkMatrix::g5(i)][j];
     Structures[5][mu][i][j] = 0.;
-    for (int k = 0; k < 4; k++) Structures[5][mu][i][j] += ppsislash[PentaquarkMatrix::g5(i)][k]*gamma[mu][k][j];
+    for (int k = 0; k < 4; k++) Structures[5][mu][i][j] -= ppsislash[PentaquarkMatrix::g5(i)][k]*gamma[mu][k][j];
   }
 
   for (int k =0; k < 4; k++) for (int i =0; i < 6; i++) for (int j =0; j < 6; j++)  Matrices[k][i][j] = PentaquarkMatrix::GetMatrix(k,i,j);
@@ -126,6 +126,8 @@ double PentaquarkMatrix::Evaluate()
     int PC = Isobars->at(n).PC()  ?1:-1;
     int eta  = Isobars->at(n).Eta() ?1:-1;
 
+  //  std::cout << "Spin " << S << std::endl;
+
     // fact are the common values for both etabars. varP is for etabar +, varM for etabar -
     int lambdamin = (j == 1) ? 0 : -1;
     for (int lambda = 1; lambda >= lambdamin; lambda--)
@@ -137,6 +139,7 @@ double PentaquarkMatrix::Evaluate()
 
         fact = over4PI * (j + 1) * pow(ps*qs, (lambda == -1) ? (j - 3)/2 : (j - 1)/2 )
                     * SpecialFunc::ClebschGordan(1,1,2, -2*lambda,S, 1 - 2*lambda) * SpecialFunc::ClebschGordan(S, 1 - 2*lambda, 2*L, 0, j, 1 - 2*lambda);
+
 
  // printf("fact =  %lf\n", fact);
         if (lambda == -1)
@@ -153,7 +156,7 @@ double PentaquarkMatrix::Evaluate()
         {
           // eta = +, etabar = +
           valP *= SpecialFunc::WignerDhat(j, 1 - 2*lambda, 1, true, costheta_s);
-          // printf("WignerDhat %lf\n", SpecialFunc::WignerDhat(j, 1 - 2*lambda, 1, true, costheta_s));
+
           if (j == 1 && PC > 0) valP *= ps2*s/mpsi2;
           // eta = +, etabar = -
           valM *= SpecialFunc::WignerDhat(j, 1 - 2*lambda, 1, false, costheta_s);
@@ -217,7 +220,9 @@ double PentaquarkMatrix::Evaluate()
       }
     }
 
-    // for (int i = 0; i<2; i++) for (int j=0;j<3;j++) printf("lambda = %d, etabar = %d, fact = %lf\n", 1 - j, 2*i + 1, real(FF[0][i*3+j]));
+    // for (int j=0;j<6;j++) printf("FF[0][%d] = (%.10lf, %.10lf)\n", j, real(FF[0][j]), imag(FF[0][j]));
+    // for (int j=0;j<6;j++) printf("FF[1][%d] = (%.10lf, %.10lf)\n", j, real(FF[1][j]), imag(FF[1][j]));
+
     cd CC[4][6] = {};
     for (int i =0; i < 4; i++) for (int j =0; j < 6; j++) for (int k =0; k < 6; k++) CC[i][j] += Matrices[i][j][k]*FF[i][k];
 
@@ -230,6 +235,20 @@ double PentaquarkMatrix::Evaluate()
       // s- and u-channel, PV
       CM[mu][i][j] += Structures[k][mu][g5(i)][j] * (CC[1][k] + CC[3][k]);
     }
+
+    // std::cout << "CM" << std::endl;
+    // for (int mu=0; mu<4; mu++)
+    // {
+    //   std::cout << "mu = " << mu << std::endl;
+    //   for (int i=0; i<4; i++)
+    //   {
+    //     for (int j=0; j<4; j++) std::cout << SpecialFunc::chop(CM[mu][i][j]) << (j == 3 ? "" : ", ");
+    //     std::cout << std::endl;
+    //   }
+    //   std::cout << std::endl << std::endl;
+    // }
+    // std::cout << std::endl << std::endl << std::endl;
+
 
     // std::cout << "CM" << std::endl;
     // for (int mu=0; mu< 4 ; mu++) {
@@ -317,8 +336,13 @@ double PentaquarkMatrix::Evaluate()
     Eb_u = (u - mK2 + mb2)/2./ru;
     Ep_u = (u + mp2 - mpsi2)/2./ru;
 
-    costheta_s = (s*(t - u) + (mb2 - mpsi2)*(mp2 - mK2))/(4.*s*ps*qs);
-    costheta_u = (u*(t - s) + (mb2 - mK2)*(mp2 - mpsi2))/(4.*u*pu*qu);
+    //costheta_s = (s*(t - u) + (mb2 - mpsi2)*(mp2 - mK2))/(4.*s*ps*qs);
+    //costheta_u = (u*(t - s) + (mb2 - mK2)*(mp2 - mpsi2))/(4.*u*pu*qu);
+    costheta_s = num_s/(ps*qs);
+    costheta_u = num_u/(pu*qu);
+
+    // printf("s %lf, t %lf, u %lf\n", s,t,u);
+    // printf("ps %lf, qs %lf, costheta_s %lf\n", ps, qs, costheta_s);
 
     if (check && !(s <= sm && s >= pow(mp + mK, 2) && u >= up && u <= pow(mb - mK, 2) && num_s <= ps*qs && num_s >= -ps*qs && num_u <= pu*qu && num_u >= -pu*qu ))
     {
@@ -497,7 +521,6 @@ double PentaquarkMatrix::Evaluate()
     return ret*sqrt((u - um)*(Eb_u + mb)/(Ep_u + mp));
 
   }
-
   /**
       Prints the whole matrices for the given kinematics
 
@@ -505,7 +528,24 @@ double PentaquarkMatrix::Evaluate()
   void PentaquarkMatrix::Print()
   {
     std::cout << "Check kinematics (s channel)" << std::endl;
-    std::cout << "p: " << ps << ", q: " << qs << ", Epsi_s: " << - Epsi_s << ", Ep_s: " << Ep_s << ", Eb_s: " << Eb_s << "cos theta_s: " << num_s/ps/qs << std::endl;
+    std::cout << "p: " << ps << ", q: " << qs << ", Epsi_s: " << Epsi_s << ", Ep_s: " << Ep_s << ", Eb_s: " << Eb_s << "cos theta_s: " << num_s/ps/qs << std::endl;
+
+    std::cout << "s-channel PC structures" << std::endl;
+    for (int ind=0; ind < 6; ind++)
+    {
+      std::cout << "M[" << ind << "]" << std::endl;
+      for (int mu=0; mu<4; mu++)
+      {
+        std::cout << "mu = " << mu << std::endl;
+        for (int i=0; i<4; i++)
+        {
+          for (int j=0; j<4; j++) std::cout << SpecialFunc::chop(Structures[ind][mu][i][j]) << (j == 3 ? "" : ", ");
+          std::cout << std::endl;
+        }
+        std::cout << std::endl << std::endl;
+      }
+      std::cout << std::endl << std::endl << std::endl;
+    }
 
     std::cout << "s-channel PC" << std::endl;
     std::cout << "{ ";

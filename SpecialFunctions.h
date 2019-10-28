@@ -81,10 +81,12 @@ inline double WignerDhat(uint j, int m1, int m2, bool eta, double z) {
 // j, m1, m2 are doubled
 inline double WignerD(uint j, int m1, int m2, double z) {
         double hat = WignerDhat(j, m1, m2, z);
-        double xi = pow(sqrt(1-z),abs(m1-m2)/2)*pow(sqrt((1+z)),abs(m1+m2)/2);
+        double xi = pow(1-z,.25*abs(m1-m2))*pow(1+z,.25*abs(m1+m2));
         // std::cout << "hat " << hat << " xi " << xi << std::endl;
         return hat*xi;
 }
+
+inline cd chop(cd x) { if (abs(x) < 1.e-10) return 0.; else return x; }
 
 
 }
